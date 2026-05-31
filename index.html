@@ -1,0 +1,1159 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mỗi Bữa Ăn Đúng — Một Lần Trở Về | Mentor Hồ Thu Tuyền</title>
+  <meta name="description" content="Khóa học Dinh Dưỡng Tỉnh Thức dành cho người bận rộn. 8 buổi · 4 tuần · Founding Cohort chỉ 10 người. Học phí 1.500.000đ. Khai giảng 15/08/2026." />
+  <meta property="og:title" content="Mỗi Bữa Ăn Đúng — Một Lần Trở Về" />
+  <meta property="og:description" content="Khóa học Dinh Dưỡng Tỉnh Thức với Mentor Hồ Thu Tuyền. Founding Cohort chỉ 10 người. Khai giảng 15/08/2026." />
+  <meta property="og:type" content="website" />
+  <meta property="og:locale" content="vi_VN" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@tabler/icons-webfont@latest/tabler-icons.min.css" />
+  <style>
+    :root {
+      --blue-dark: #042C53;
+      --blue-mid: #0C447C;
+      --blue-light: #185FA5;
+      --gold: #EF9F27;
+      --gold-light: #FAC775;
+      --gold-dark: #BA7517;
+      --be-light: #FBF8F0;
+      --be-mid: #F5EDD8;
+      --be-warm: #FAEEDA;
+      --purple-dark: #4B3264;
+      --purple-mid: #6B3F8C;
+      --purple-light: #C9A0DC;
+      --teal-dark: #0F6E56;
+      --teal-mid: #1D9E75;
+      --teal-light: #97C459;
+      --orange: #D85A30;
+      --orange-light: #F0997B;
+      --font-serif: 'Playfair Display', Georgia, serif;
+      --font-sans: 'Inter', system-ui, sans-serif;
+      --radius-lg: 20px;
+      --radius-md: 12px;
+      --radius-sm: 8px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body { font-family: var(--font-sans); color: #2D2D2D; background: var(--be-light); line-height: 1.6; }
+    img { max-width: 100%; }
+    a { text-decoration: none; color: inherit; }
+
+    /* ── ANIMATIONS ── */
+    @keyframes float1 { 0%,100%{transform:translateY(0) rotate(-3deg)} 50%{transform:translateY(-14px) rotate(3deg)} }
+    @keyframes float2 { 0%,100%{transform:translateY(0) rotate(3deg)} 50%{transform:translateY(-18px) rotate(-3deg)} }
+    @keyframes float3 { 0%,100%{transform:translateY(0) rotate(-5deg)} 50%{transform:translateY(-12px) rotate(5deg)} }
+    @keyframes float4 { 0%,100%{transform:translateY(0) rotate(2deg)} 50%{transform:translateY(-16px) rotate(-4deg)} }
+    @keyframes sparkle { 0%,100%{opacity:.2;transform:scale(.8)} 50%{opacity:1;transform:scale(1.2)} }
+    @keyframes pulse-btn { 0%,100%{box-shadow:0 0 0 0 rgba(239,159,39,.5)} 50%{box-shadow:0 0 0 12px rgba(239,159,39,0)} }
+    @keyframes shimmer { 0%{background-position:-200% center} 100%{background-position:200% center} }
+    @keyframes glow { 0%,100%{text-shadow:0 0 8px rgba(250,199,117,.4)} 50%{text-shadow:0 0 22px rgba(250,199,117,.9),0 0 40px rgba(239,159,39,.5)} }
+    @keyframes rotate-ring { from{transform:rotate(0deg)} to{transform:rotate(360deg)} }
+    @keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }
+    @keyframes pulse-htt { 0%,100%{box-shadow:0 0 0 0 rgba(239,159,39,.4)} 70%{box-shadow:0 0 0 10px rgba(239,159,39,0)} }
+    @keyframes fadeInUp { from{opacity:0;transform:translateY(28px)} to{opacity:1;transform:translateY(0)} }
+
+    /* ── SECTION 1: HERO ── */
+    #hero {
+      background: linear-gradient(145deg, var(--blue-dark) 0%, var(--blue-mid) 55%, var(--blue-light) 100%);
+      min-height: 100svh;
+      position: relative;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 60px 20px 80px;
+      text-align: center;
+    }
+    .sparkle { position: absolute; color: var(--gold-light); font-size: 14px; animation: sparkle 2.5s ease-in-out infinite; pointer-events: none; }
+    .icon-corner { position: absolute; width: 88px; pointer-events: none; }
+    .icon-corner.tl { top: 24px; left: 16px; animation: float1 4s ease-in-out infinite; }
+    .icon-corner.tr { top: 24px; right: 16px; animation: float2 5s ease-in-out infinite; }
+    .icon-corner.bl { bottom: 80px; left: 16px; animation: float3 4.5s ease-in-out infinite; }
+    .icon-corner.br { bottom: 80px; right: 16px; animation: float4 5.5s ease-in-out infinite; }
+    @media(min-width:768px){
+      .icon-corner { width: 120px; }
+      .icon-corner.tl,.icon-corner.tr { top: 40px; }
+      .icon-corner.tl,.icon-corner.bl { left: 40px; }
+      .icon-corner.tr,.icon-corner.br { right: 40px; }
+      .icon-corner.bl,.icon-corner.br { bottom: 60px; }
+    }
+    .hero-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(239,159,39,.18); border: 1px solid rgba(239,159,39,.4);
+      color: var(--gold-light); font-size: 12px; font-weight: 600; letter-spacing: 2px;
+      padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
+    }
+    .hero-title {
+      font-family: var(--font-serif); font-size: clamp(28px, 7vw, 52px);
+      color: #fff; line-height: 1.25; margin-bottom: 12px;
+      animation: fadeInUp .8s ease both;
+    }
+    .hero-title span { color: var(--gold-light); }
+    .hero-sub {
+      font-size: clamp(14px, 3vw, 18px); color: rgba(255,255,255,.75);
+      margin-bottom: 28px; max-width: 480px;
+    }
+    .hero-philosophy { margin-bottom: 36px; display: flex; flex-direction: column; gap: 10px; }
+    .hero-phil-line {
+      background: rgba(255,255,255,.06); border: 1px solid rgba(239,159,39,.2);
+      border-radius: var(--radius-md); padding: 10px 20px;
+      color: rgba(255,255,255,.85); font-size: clamp(13px, 2.5vw, 15px);
+      max-width: 420px; margin: 0 auto;
+    }
+    .hero-phil-line strong { color: var(--gold-light); }
+    .hero-cta { display: flex; flex-wrap: wrap; gap: 12px; justify-content: center; margin-bottom: 16px; }
+    .btn-gold {
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #fff; font-weight: 600; font-size: 15px;
+      padding: 14px 28px; border-radius: var(--radius-md); border: none; cursor: pointer;
+      animation: pulse-btn 2s ease-in-out infinite;
+      transition: transform .2s;
+    }
+    .btn-gold:hover { transform: translateY(-2px); }
+    .btn-outline {
+      background: transparent; border: 1.5px solid var(--gold-light);
+      color: var(--gold-light); font-size: 15px; font-weight: 500;
+      padding: 14px 28px; border-radius: var(--radius-md); cursor: pointer;
+      transition: background .2s, color .2s;
+    }
+    .btn-outline:hover { background: rgba(239,159,39,.15); }
+    .scroll-cue { color: rgba(255,255,255,.5); margin-top: 24px; animation: bounce 1.6s ease-in-out infinite; font-size: 22px; }
+
+    /* ── SECTION 2: NỖI ĐAU ── */
+    #noi-dau {
+      background: linear-gradient(160deg, var(--be-light) 0%, var(--be-mid) 50%, var(--be-warm) 100%);
+      padding: 80px 20px;
+    }
+    .section-inner { max-width: 720px; margin: 0 auto; }
+    .section-badge {
+      display: inline-flex; align-items: center; gap: 6px;
+      background: rgba(239,159,39,.12); border: 1px solid rgba(239,159,39,.3);
+      color: var(--gold-dark); font-size: 11px; font-weight: 700; letter-spacing: 2px;
+      padding: 5px 14px; border-radius: 100px; margin-bottom: 16px; text-transform: uppercase;
+    }
+    .section-title { font-family: var(--font-serif); font-size: clamp(22px, 5vw, 34px); color: var(--blue-dark); margin-bottom: 8px; }
+    .section-sub { color: #6B7280; font-size: 15px; margin-bottom: 40px; }
+    .stats-box {
+      background: #fff; border-radius: var(--radius-lg); padding: 28px 24px;
+      box-shadow: 0 4px 24px rgba(4,44,83,.08); margin-bottom: 40px;
+      text-align: center; max-width: 540px; margin-left: auto; margin-right: auto;
+    }
+    .stats-box .badge { font-size: 11px; font-weight: 700; color: var(--orange); letter-spacing: 1.5px; margin-bottom: 16px; display: block; }
+    .stats-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-bottom: 16px; }
+    .stat-item { background: var(--be-light); border-radius: var(--radius-sm); padding: 14px 10px; }
+    .stat-num { font-family: var(--font-serif); font-size: 28px; color: var(--blue-dark); font-weight: 700; }
+    .stat-label { font-size: 12px; color: #6B7280; margin-top: 4px; }
+    .stat-highlight { color: var(--orange); }
+    .stats-q { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--blue-dark); }
+    .pain-group-label {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #9CA3AF;
+      text-transform: uppercase; margin-bottom: 12px; margin-top: 32px;
+    }
+    .pain-grid { display: grid; gap: 12px; }
+    .pain-card {
+      background: #fff; border-radius: var(--radius-md); padding: 18px 20px;
+      border-left: 3px solid var(--gold-light);
+      display: flex; align-items: flex-start; gap: 14px;
+      box-shadow: 0 2px 12px rgba(4,44,83,.06);
+    }
+    .pain-card.core { border-left-color: var(--gold); border-width: 1.5px; border-style: solid; }
+    .pain-card.purple { border-left-color: var(--purple-light); }
+    .pain-card.teal { border-left-color: var(--teal-mid); }
+    .pain-icon {
+      width: 38px; height: 38px; border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      flex-shrink: 0; font-size: 18px;
+    }
+    .pain-text { flex: 1; }
+    .pain-title { font-weight: 600; font-size: 14px; color: var(--blue-dark); margin-bottom: 3px; }
+    .pain-desc { font-size: 13px; color: #6B7280; }
+    .core-badge { display: inline-block; font-size: 10px; font-weight: 700; color: var(--gold-dark); background: rgba(239,159,39,.12); padding: 2px 8px; border-radius: 100px; margin-left: 6px; }
+    .divider-leaf { text-align: center; margin: 24px 0; color: var(--teal-mid); font-size: 20px; opacity: .6; }
+    .climax-box {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      border-radius: var(--radius-lg); padding: 36px 28px; text-align: center;
+      max-width: 600px; margin: 32px auto 0; position: relative; overflow: hidden;
+    }
+    .climax-ring {
+      width: 72px; height: 72px; margin: 0 auto 20px;
+      border: 2px solid rgba(239,159,39,.5); border-radius: 50%;
+      display: flex; align-items: center; justify-content: center;
+      animation: rotate-ring 20s linear infinite;
+      box-shadow: 0 0 16px rgba(239,159,39,.25);
+    }
+    .climax-ring-inner { font-size: 13px; font-weight: 700; color: var(--gold-light); letter-spacing: 2px; animation: rotate-ring 20s linear infinite reverse; }
+    .climax-text { color: rgba(255,255,255,.7); font-size: 15px; margin-bottom: 12px; }
+    .climax-text s { color: rgba(255,255,255,.4); }
+    .climax-main { font-family: var(--font-serif); font-size: clamp(20px, 5vw, 28px); color: #fff; font-weight: 700; margin-bottom: 12px; }
+    .climax-main span { color: var(--gold-light); }
+    .climax-end { font-style: italic; color: rgba(255,255,255,.7); font-size: 14px; }
+    .bridge-box { text-align: center; margin-top: 36px; }
+    .bridge-text { color: #4B5563; font-size: 15px; margin-bottom: 20px; max-width: 560px; margin-left: auto; margin-right: auto; }
+    .bridge-text strong { color: var(--blue-dark); }
+
+    /* ── SECTION 3: LỘ TRÌNH ── */
+    #lo-trinh {
+      background: linear-gradient(160deg, var(--be-warm) 0%, var(--be-light) 50%, var(--be-mid) 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .stage-grid { display: grid; gap: 16px; margin-top: 40px; }
+    .stage-card {
+      background: #fff; border-radius: var(--radius-lg); padding: 24px 20px;
+      box-shadow: 0 4px 20px rgba(4,44,83,.07);
+      text-align: left; position: relative; overflow: hidden;
+    }
+    .stage-card::after {
+      content: ''; position: absolute; top: 0; right: 0;
+      width: 80px; height: 80px; border-radius: 0 var(--radius-lg) 0 80px;
+      opacity: .08;
+    }
+    .stage-card.s1::after { background: var(--purple-dark); }
+    .stage-card.s2::after { background: var(--gold); }
+    .stage-card.s3::after { background: var(--orange); }
+    .stage-card.s4::after { background: var(--teal-dark); }
+    .stage-week { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
+    .stage-card.s1 .stage-week { color: var(--purple-dark); }
+    .stage-card.s2 .stage-week { color: var(--gold-dark); }
+    .stage-card.s3 .stage-week { color: var(--orange); }
+    .stage-card.s4 .stage-week { color: var(--teal-dark); }
+    .stage-title { font-family: var(--font-serif); font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+    .stage-card.s1 .stage-title { color: var(--purple-dark); }
+    .stage-card.s2 .stage-title { color: var(--gold-dark); }
+    .stage-card.s3 .stage-title { color: var(--orange); }
+    .stage-card.s4 .stage-title { color: var(--teal-dark); }
+    .stage-key-badge {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      background: rgba(239,159,39,.15); color: var(--gold-dark);
+      padding: 2px 8px; border-radius: 100px; margin-bottom: 12px;
+    }
+    .stage-lessons { display: flex; flex-direction: column; gap: 8px; }
+    .stage-lesson { font-size: 13px; color: #4B5563; padding-left: 12px; position: relative; }
+    .stage-lesson::before { content: '•'; position: absolute; left: 0; color: var(--gold); }
+    .stage-lesson strong { color: var(--blue-dark); font-weight: 600; }
+    .chip-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 10px; }
+    .chip {
+      font-size: 12px; padding: 4px 10px; border-radius: 100px;
+      background: var(--be-light); color: #4B5563; border: 1px solid rgba(4,44,83,.1);
+    }
+    .commit-grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-top: 40px; }
+    .commit-card {
+      background: #fff; border-radius: var(--radius-md); padding: 16px 12px; text-align: center;
+      box-shadow: 0 2px 10px rgba(4,44,83,.06);
+    }
+    .commit-icon { font-size: 22px; margin-bottom: 6px; }
+    .commit-label { font-size: 12px; font-weight: 600; color: var(--blue-dark); }
+    .commit-sub { font-size: 11px; color: #9CA3AF; margin-top: 2px; }
+
+    /* ── SECTION 4: GIẢNG VIÊN ── */
+    #giang-vien {
+      background: linear-gradient(160deg, var(--be-mid) 0%, var(--be-warm) 50%, var(--be-light) 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .mentor-card {
+      background: #fff; border-radius: var(--radius-lg); padding: 32px 24px;
+      max-width: 620px; margin: 40px auto 0;
+      box-shadow: 0 8px 40px rgba(4,44,83,.1);
+    }
+    .avatar-wrap { position: relative; width: 110px; height: 110px; margin: 0 auto 20px; }
+    .avatar-circle {
+      width: 110px; height: 110px; border-radius: 50%;
+      background: linear-gradient(135deg, var(--be-warm) 0%, #F5E4C3 100%);
+      border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center;
+      position: relative; overflow: hidden;
+      animation: pulse-htt 2.5s ease-in-out infinite;
+    }
+    .avatar-htt {
+      font-family: var(--font-serif); font-size: 38px; font-weight: 700;
+      color: var(--gold-dark); transform: rotate(-3deg); position: relative; z-index: 1;
+      text-shadow: 1px 2px 6px rgba(186,117,23,.3);
+    }
+    .avatar-lotus {
+      position: absolute; bottom: -6px; right: -6px; width: 30px; height: 30px;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 14px; border: 2px solid #fff;
+      animation: float2 3s ease-in-out infinite;
+    }
+    .mentor-name { font-family: var(--font-serif); font-size: 26px; color: var(--blue-dark); margin-bottom: 4px; }
+    .mentor-role { font-size: 12px; font-weight: 700; color: var(--gold); letter-spacing: 2px; margin-bottom: 10px; }
+    .mentor-tagline { font-style: italic; color: #6B7280; font-size: 14px; margin-bottom: 28px; max-width: 400px; margin-left: auto; margin-right: auto; }
+    .edu-list { display: flex; flex-direction: column; gap: 10px; margin-bottom: 24px; text-align: left; }
+    .edu-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--be-light); border-radius: var(--radius-sm); padding: 14px;
+    }
+    .edu-icon {
+      width: 36px; height: 36px; border-radius: var(--radius-sm);
+      display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 16px; color: #fff;
+    }
+    .edu-icon.blue { background: linear-gradient(135deg, var(--blue-dark), var(--blue-light)); }
+    .edu-icon.purple { background: linear-gradient(135deg, var(--purple-dark), var(--purple-mid)); }
+    .edu-icon.gold { background: linear-gradient(135deg, var(--gold), var(--gold-dark)); }
+    .edu-icon.teal { background: linear-gradient(135deg, var(--teal-dark), var(--teal-mid)); }
+    .edu-content { flex: 1; }
+    .edu-degree { font-size: 13px; font-weight: 600; color: var(--blue-dark); }
+    .edu-where { font-size: 12px; color: #9CA3AF; }
+    .edu-badge {
+      display: inline-block; font-size: 10px; font-weight: 700; padding: 2px 7px; border-radius: 100px;
+      margin-left: 6px; vertical-align: middle;
+    }
+    .edu-badge.intl { background: rgba(4,44,83,.1); color: var(--blue-dark); }
+    .edu-badge.studying { background: rgba(29,158,117,.15); color: var(--teal-dark); }
+    .research-box {
+      background: linear-gradient(135deg, #FEF3E2 0%, #FFF8EE 100%);
+      border: 1px solid rgba(239,159,39,.25); border-radius: var(--radius-md);
+      padding: 18px; margin-bottom: 16px; text-align: left; display: flex; gap: 14px; align-items: flex-start;
+    }
+    .research-icon {
+      width: 42px; height: 42px; background: linear-gradient(135deg, var(--gold), var(--gold-dark));
+      border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px; flex-shrink: 0;
+    }
+    .research-badge { font-size: 10px; font-weight: 700; color: #92400E; letter-spacing: 1px; display: block; margin-bottom: 4px; }
+    .research-title { font-size: 13px; font-weight: 600; color: var(--blue-dark); margin-bottom: 3px; }
+    .research-desc { font-size: 12px; color: #6B7280; }
+    .community-box {
+      background: linear-gradient(135deg, #F5EEF8 0%, #FDF8FF 100%);
+      border: 1px solid rgba(107,63,140,.2); border-radius: var(--radius-md);
+      padding: 18px; margin-bottom: 24px; text-align: left; display: flex; gap: 14px; align-items: flex-start;
+    }
+    .community-icon {
+      width: 42px; height: 42px; background: linear-gradient(135deg, var(--purple-dark), var(--purple-mid));
+      border-radius: var(--radius-sm); display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 20px; flex-shrink: 0;
+    }
+    .community-badge { font-size: 10px; font-weight: 700; color: var(--purple-dark); letter-spacing: 1px; display: block; margin-bottom: 4px; }
+    .community-title { font-size: 13px; font-weight: 600; color: var(--purple-dark); margin-bottom: 2px; }
+    .community-slogan { font-size: 12px; color: var(--purple-mid); font-style: italic; margin-bottom: 10px; }
+    .community-stats { display: grid; grid-template-columns: repeat(3,1fr); gap: 8px; }
+    .c-stat { text-align: center; }
+    .c-stat-num { font-size: 13px; font-weight: 700; color: var(--purple-dark); }
+    .c-stat-label { font-size: 11px; color: #9CA3AF; }
+    .timeline-box {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      border-radius: var(--radius-md); padding: 24px 20px; margin-bottom: 20px;
+    }
+    .timeline-badge { font-size: 10px; font-weight: 700; color: var(--gold-light); letter-spacing: 2px; display: block; margin-bottom: 16px; text-align: center; }
+    .timeline-cols { display: grid; grid-template-columns: repeat(3,1fr); gap: 12px; margin-bottom: 16px; }
+    .t-col { text-align: center; }
+    .t-year { font-family: var(--font-serif); font-size: 20px; color: var(--gold-light); font-weight: 700; }
+    .t-label { font-size: 11px; color: rgba(255,255,255,.6); margin-top: 4px; }
+    .t-val { font-size: 12px; color: rgba(255,255,255,.85); font-weight: 500; margin-top: 2px; }
+    .timeline-quote { font-style: italic; font-size: 13px; color: rgba(255,255,255,.75); text-align: center; border-top: 1px solid rgba(255,255,255,.1); padding-top: 14px; }
+    .timeline-quote strong { color: var(--gold-light); }
+    .mentor-philosophy { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--blue-dark); text-align: center; padding: 0 8px; }
+    .mentor-philosophy strong { color: var(--gold-dark); }
+
+    /* ── SECTION 5: SẢN PHẨM ── */
+    #san-pham {
+      background: linear-gradient(160deg, var(--be-light) 0%, var(--be-mid) 50%, var(--be-warm) 100%);
+      padding: 80px 20px;
+      text-align: center;
+    }
+    .product-card {
+      background: #fff; border-radius: var(--radius-lg); padding: 28px 22px;
+      max-width: 620px; margin: 24px auto 0;
+      box-shadow: 0 4px 24px rgba(4,44,83,.08);
+    }
+    .product-inner-badge {
+      font-size: 11px; font-weight: 700; letter-spacing: 2px; color: #9CA3AF;
+      border-bottom: 1px solid var(--be-mid); padding-bottom: 12px; margin-bottom: 16px;
+    }
+    .product-title { font-family: var(--font-serif); font-size: 20px; color: var(--blue-dark); margin-bottom: 18px; }
+    .product-info-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 10px; margin-bottom: 16px; }
+    .product-info-item {
+      background: var(--be-warm); border-radius: var(--radius-sm); padding: 12px 10px; text-align: center;
+    }
+    .product-info-item .icon { font-size: 18px; margin-bottom: 4px; }
+    .product-info-item .val { font-size: 13px; font-weight: 600; color: var(--blue-dark); }
+    .product-info-item .sub { font-size: 11px; color: #9CA3AF; margin-top: 2px; }
+    .product-note { font-size: 13px; color: #6B7280; }
+    .product-note strong { color: var(--blue-dark); }
+    .bonus-list { display: flex; flex-direction: column; gap: 10px; }
+    .bonus-item {
+      display: flex; align-items: flex-start; gap: 12px;
+      background: var(--be-light); border-radius: var(--radius-sm); padding: 14px;
+      border: 1px solid transparent;
+    }
+    .bonus-item.star {
+      background: linear-gradient(135deg, #FFF0EC 0%, #FFF8F5 100%);
+      border-color: var(--gold); box-shadow: 0 4px 16px rgba(239,159,39,.15);
+    }
+    .bonus-icon { font-size: 22px; flex-shrink: 0; }
+    .bonus-content { flex: 1; text-align: left; }
+    .bonus-name { font-size: 13px; font-weight: 600; color: var(--blue-dark); }
+    .bonus-desc { font-size: 12px; color: #6B7280; margin-top: 2px; }
+    .bonus-badge-star {
+      display: inline-block; font-size: 10px; font-weight: 700;
+      background: linear-gradient(135deg, #92400E, #B45309); color: #fff;
+      padding: 2px 8px; border-radius: 100px; margin-left: 6px; vertical-align: middle;
+    }
+    .price-card {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      border-radius: var(--radius-lg); padding: 32px 24px;
+      max-width: 620px; margin: 24px auto 0; text-align: center;
+      box-shadow: 0 12px 48px rgba(4,44,83,.3);
+    }
+    .price-inner-badge { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: rgba(255,255,255,.5); margin-bottom: 16px; display: block; }
+    .price-old { color: rgba(255,255,255,.5); font-size: 15px; margin-bottom: 8px; }
+    .price-old s { text-decoration-color: var(--gold); }
+    .price-main { font-family: var(--font-serif); font-size: 48px; color: var(--gold-light); font-weight: 700; animation: glow 2.5s ease-in-out infinite; margin-bottom: 4px; }
+    .price-label { color: rgba(255,255,255,.6); font-size: 13px; margin-bottom: 16px; }
+    .price-save {
+      display: inline-block; border: 1px solid rgba(239,159,39,.5);
+      background: rgba(239,159,39,.1); color: var(--gold-light);
+      font-size: 13px; padding: 6px 16px; border-radius: 100px; margin-bottom: 24px;
+    }
+    .btn-register {
+      display: block; width: 100%;
+      background: linear-gradient(135deg, var(--gold) 0%, var(--gold-dark) 100%);
+      color: #fff; font-size: 16px; font-weight: 700; letter-spacing: 1px;
+      padding: 18px 24px; border-radius: var(--radius-md); border: none; cursor: pointer;
+      animation: pulse-btn 2s ease-in-out infinite; transition: transform .2s;
+      text-align: center;
+    }
+    .btn-register:hover { transform: translateY(-2px); }
+    .price-info { color: rgba(255,255,255,.6); font-size: 13px; margin-top: 16px; }
+    .scarcity-card {
+      background: linear-gradient(135deg, #F2E8F8 0%, #fff 100%);
+      border: 1px solid var(--purple-light); border-radius: var(--radius-lg);
+      padding: 28px 22px; max-width: 620px; margin: 24px auto 0; text-align: center;
+    }
+    .scarcity-icon {
+      width: 48px; height: 48px; background: linear-gradient(135deg, var(--purple-dark), var(--purple-mid));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 22px; margin: 0 auto 16px;
+    }
+    .scarcity-title { font-family: var(--font-serif); font-size: 18px; color: var(--purple-dark); margin-bottom: 12px; }
+    .scarcity-text { font-size: 14px; color: #4B5563; margin-bottom: 16px; line-height: 1.7; }
+    .scarcity-text strong { color: var(--purple-dark); }
+    .scarcity-note { font-style: italic; font-size: 13px; color: var(--purple-mid); border-top: 1px dashed rgba(107,63,140,.3); padding-top: 14px; }
+    .scarcity-note strong { color: var(--purple-dark); }
+
+    /* ── SECTION 6: FAQ + CTA + FOOTER ── */
+    #faq-cta {
+      background: linear-gradient(160deg, var(--be-warm) 0%, var(--be-light) 100%);
+      padding: 80px 20px;
+    }
+    .faq-list { max-width: 660px; margin: 40px auto 0; display: flex; flex-direction: column; gap: 12px; }
+    .faq-item {
+      background: #fff; border-radius: var(--radius-md);
+      box-shadow: 0 2px 12px rgba(4,44,83,.06); overflow: hidden;
+    }
+    .faq-question {
+      width: 100%; text-align: left; padding: 18px 20px;
+      background: none; border: none; cursor: pointer;
+      display: flex; align-items: center; justify-content: space-between; gap: 12px;
+      font-size: 14px; font-weight: 600; color: var(--blue-dark);
+      transition: background .2s;
+    }
+    .faq-question:hover { background: var(--be-light); }
+    .faq-question .faq-icon { flex-shrink: 0; font-size: 18px; color: var(--gold); transition: transform .3s; }
+    .faq-item.open .faq-question .faq-icon { transform: rotate(45deg); }
+    .faq-answer {
+      max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s ease;
+      padding: 0 20px;
+    }
+    .faq-item.open .faq-answer { max-height: 300px; padding: 0 20px 18px; }
+    .faq-answer p { font-size: 14px; color: #4B5563; line-height: 1.7; }
+    .faq-answer strong { color: var(--blue-dark); }
+    .faq-answer .highlight { color: var(--teal-dark); font-weight: 600; }
+    .guarantee-box {
+      background: linear-gradient(135deg, #F0FBF7 0%, #E8F7F2 100%);
+      border: 1.5px solid rgba(29,158,117,.3); border-radius: var(--radius-lg);
+      padding: 28px 22px; max-width: 660px; margin: 40px auto 0;
+      display: flex; gap: 16px; align-items: flex-start;
+    }
+    .guarantee-icon {
+      width: 48px; height: 48px; background: linear-gradient(135deg, var(--teal-dark), var(--teal-mid));
+      border-radius: 50%; display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 22px; flex-shrink: 0;
+    }
+    .guarantee-title { font-family: var(--font-serif); font-size: 17px; color: var(--teal-dark); margin-bottom: 8px; }
+    .guarantee-list { list-style: none; display: flex; flex-direction: column; gap: 6px; }
+    .guarantee-list li { font-size: 13px; color: #374151; display: flex; gap: 8px; align-items: flex-start; }
+    .guarantee-list li::before { content: '✓'; color: var(--teal-mid); font-weight: 700; flex-shrink: 0; }
+    .final-cta {
+      background: linear-gradient(135deg, var(--blue-dark) 0%, var(--blue-mid) 100%);
+      border-radius: var(--radius-lg); padding: 40px 24px;
+      max-width: 660px; margin: 40px auto 0; text-align: center;
+    }
+    .final-cta-badge { font-size: 11px; font-weight: 700; letter-spacing: 2px; color: var(--gold-light); margin-bottom: 12px; display: block; }
+    .final-cta-title { font-family: var(--font-serif); font-size: clamp(20px, 5vw, 28px); color: #fff; margin-bottom: 8px; }
+    .final-cta-sub { color: rgba(255,255,255,.65); font-size: 14px; margin-bottom: 28px; }
+    .final-cta-detail { display: flex; flex-wrap: wrap; gap: 8px; justify-content: center; margin-bottom: 28px; }
+    .cta-chip {
+      background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.15);
+      color: rgba(255,255,255,.8); font-size: 12px; padding: 5px 12px; border-radius: 100px;
+    }
+    .final-cta-note { color: rgba(255,255,255,.5); font-size: 12px; margin-top: 16px; }
+    footer {
+      background: var(--blue-dark); padding: 32px 20px;
+      text-align: center; color: rgba(255,255,255,.5); font-size: 13px;
+    }
+    .footer-name { font-family: var(--font-serif); font-size: 18px; color: var(--gold-light); margin-bottom: 4px; }
+    .footer-role { color: rgba(255,255,255,.5); font-size: 12px; margin-bottom: 16px; }
+    .footer-contact { display: flex; flex-wrap: wrap; gap: 16px; justify-content: center; margin-bottom: 16px; }
+    .footer-link { color: rgba(255,255,255,.6); font-size: 13px; display: flex; align-items: center; gap: 5px; }
+    .footer-link i { color: var(--gold); }
+    .footer-divider { border-top: 1px solid rgba(255,255,255,.08); padding-top: 16px; margin-top: 4px; }
+    .footer-copy { font-size: 12px; color: rgba(255,255,255,.3); }
+
+    /* ── RESPONSIVE ── */
+    @media(min-width:640px){
+      .pain-grid { grid-template-columns: 1fr 1fr; }
+      .stage-grid { grid-template-columns: 1fr 1fr; }
+    }
+    @media(min-width:768px){
+      .pain-grid { grid-template-columns: 1fr 1fr 1fr; }
+      .stage-grid { grid-template-columns: 1fr 1fr; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══════════════════════════════════════════
+     SECTION 1 — HERO
+═══════════════════════════════════════════ -->
+<section id="hero">
+
+  <!-- Sparkle stars -->
+  <span class="sparkle" style="top:12%;left:18%;animation-delay:.3s">✦</span>
+  <span class="sparkle" style="top:22%;left:70%;animation-delay:1.1s;font-size:10px">✧</span>
+  <span class="sparkle" style="top:60%;left:12%;animation-delay:.7s;font-size:10px">✦</span>
+  <span class="sparkle" style="top:75%;left:82%;animation-delay:1.8s">✧</span>
+  <span class="sparkle" style="top:40%;left:90%;animation-delay:.5s;font-size:8px">✦</span>
+  <span class="sparkle" style="top:50%;left:5%;animation-delay:1.4s;font-size:8px">✧</span>
+
+  <!-- 4 biểu tượng dinh dưỡng 3D ở 4 góc -->
+  <!-- 🌾 TINH BỘT - góc trên trái -->
+  <svg class="icon-corner tl" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gLua" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#D4A843"/><stop offset="100%" stop-color="#8B6914"/></linearGradient>
+      <linearGradient id="gLuaNhe" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0C96B"/><stop offset="100%" stop-color="#C8960A"/></linearGradient>
+    </defs>
+    <g transform="translate(45,10)">
+      <line x1="0" y1="0" x2="0" y2="65" stroke="url(#gLua)" stroke-width="3" stroke-linecap="round"/>
+      <ellipse cx="0" cy="8" rx="7" ry="14" fill="url(#gLuaNhe)" transform="rotate(-20)"/>
+      <ellipse cx="0" cy="8" rx="7" ry="14" fill="url(#gLuaNhe)" transform="rotate(20)"/>
+      <ellipse cx="0" cy="18" rx="6" ry="12" fill="url(#gLua)" transform="rotate(-15)"/>
+      <ellipse cx="0" cy="18" rx="6" ry="12" fill="url(#gLua)" transform="rotate(15)"/>
+      <ellipse cx="0" cy="26" rx="5" ry="10" fill="url(#gLuaNhe)" transform="rotate(-10)"/>
+      <ellipse cx="0" cy="26" rx="5" ry="10" fill="url(#gLuaNhe)" transform="rotate(10)"/>
+    </g>
+    <text x="45" y="86" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="600">TINH BỘT</text>
+  </svg>
+
+  <!-- 🥚 ĐẠM - góc trên phải -->
+  <svg class="icon-corner tr" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gTrung" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#FFF8E7"/><stop offset="100%" stop-color="#F5E0A0"/></linearGradient>
+      <linearGradient id="gVoTrung" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F0DFA0"/><stop offset="100%" stop-color="#C8A830"/></linearGradient>
+    </defs>
+    <ellipse cx="40" cy="38" rx="22" ry="26" fill="url(#gVoTrung)" opacity=".9"/>
+    <ellipse cx="40" cy="36" rx="18" ry="22" fill="url(#gTrung)"/>
+    <ellipse cx="34" cy="30" rx="5" ry="7" fill="rgba(255,255,255,0.5)" transform="rotate(-15,34,30)"/>
+    <circle cx="22" cy="60" r="7" fill="#7B4A2D" opacity=".85"/>
+    <circle cx="38" cy="65" r="6" fill="#5C3420" opacity=".85"/>
+    <circle cx="54" cy="60" r="7" fill="#8B5E3C" opacity=".85"/>
+    <text x="45" y="84" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="600">ĐẠM</text>
+  </svg>
+
+  <!-- 🥑 CHẤT BÉO - góc dưới trái -->
+  <svg class="icon-corner bl" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gVoBo" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#4A7C59"/><stop offset="100%" stop-color="#2D5E38"/></linearGradient>
+      <linearGradient id="gThitBo" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#C8E6C0"/><stop offset="100%" stop-color="#90C47A"/></linearGradient>
+    </defs>
+    <ellipse cx="44" cy="44" rx="26" ry="34" fill="url(#gVoBo)"/>
+    <ellipse cx="44" cy="46" rx="18" ry="26" fill="url(#gThitBo)"/>
+    <ellipse cx="44" cy="50" rx="9" ry="14" fill="#7B5E3C"/>
+    <ellipse cx="40" cy="30" rx="6" ry="9" fill="rgba(255,255,255,0.15)" transform="rotate(-15,40,30)"/>
+    <text x="45" y="86" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="600">CHẤT BÉO</text>
+  </svg>
+
+  <!-- 🥬 VITAMIN - góc dưới phải -->
+  <svg class="icon-corner br" viewBox="0 0 90 90" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <defs>
+      <linearGradient id="gRau" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#5BC47A"/><stop offset="100%" stop-color="#2E7D4F"/></linearGradient>
+      <linearGradient id="gCam" x1="0" y1="0" x2="1" y2="1"><stop offset="0%" stop-color="#F4A226"/><stop offset="100%" stop-color="#E07B10"/></linearGradient>
+    </defs>
+    <ellipse cx="32" cy="52" rx="20" ry="24" fill="url(#gRau)" transform="rotate(-15,32,52)"/>
+    <ellipse cx="50" cy="48" rx="17" ry="22" fill="#3DAA60" transform="rotate(10,50,48)"/>
+    <line x1="32" y1="52" x2="32" y2="18" stroke="#2E7D4F" stroke-width="2.5" stroke-linecap="round"/>
+    <circle cx="62" cy="58" r="16" fill="url(#gCam)"/>
+    <line x1="62" y1="58" x2="62" y2="44" stroke="#D4700A" stroke-width="1.5"/>
+    <line x1="62" y1="58" x2="74" y2="50" stroke="#D4700A" stroke-width="1.5"/>
+    <line x1="62" y1="58" x2="50" y2="50" stroke="#D4700A" stroke-width="1.5"/>
+    <line x1="62" y1="58" x2="62" y2="72" stroke="#D4700A" stroke-width="1.5"/>
+    <line x1="62" y1="58" x2="74" y2="66" stroke="#D4700A" stroke-width="1.5"/>
+    <line x1="62" y1="58" x2="50" y2="66" stroke="#D4700A" stroke-width="1.5"/>
+    <text x="45" y="86" text-anchor="middle" fill="rgba(255,255,255,0.7)" font-size="9" font-family="Inter,sans-serif" font-weight="600">VITAMIN</text>
+  </svg>
+
+  <!-- Hero content -->
+  <div style="position:relative;z-index:2;max-width:560px;width:100%;">
+    <div class="hero-badge">
+      <i class="ti ti-sparkles"></i> DINH DƯỠNG TỈNH THỨC
+    </div>
+    <h1 class="hero-title">
+      Mỗi bữa ăn đúng —<br/>
+      <span>Một lần trở về —</span>
+    </h1>
+    <p class="hero-sub">Nhận thức đủ đầy về Dinh Dưỡng cho Người Bận Rộn</p>
+    <div class="hero-philosophy">
+      <div class="hero-phil-line">Không phải thực đơn — mà là <strong>góc nhìn mới</strong></div>
+      <div class="hero-phil-line">Không phải kế hoạch — mà là <strong>sự trở về</strong></div>
+      <div class="hero-phil-line">Cho người khỏe hơn, vui hơn, dù đời có vội</div>
+    </div>
+    <div class="hero-cta">
+      <button class="btn-gold" onclick="document.getElementById('noi-dau').scrollIntoView({behavior:'smooth'})">
+        Tìm hiểu thêm ⬇
+      </button>
+      <button class="btn-outline" onclick="document.getElementById('giang-vien').scrollIntoView({behavior:'smooth'})">
+        Xem giảng viên
+      </button>
+    </div>
+  </div>
+  <div class="scroll-cue"><i class="ti ti-chevron-down"></i></div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 2 — NỖI ĐAU
+═══════════════════════════════════════════ -->
+<section id="noi-dau">
+  <div class="section-inner" style="text-align:center">
+    <!-- Cú đánh thức -->
+    <div class="stats-box">
+      <span class="badge">THỰC TRẠNG ĐÁNG SUY NGẪM</span>
+      <div class="stats-grid">
+        <div class="stat-item">
+          <div class="stat-num"><span class="stat-highlight">20 triệu</span></div>
+          <div class="stat-label">người Việt đang thừa cân, béo phì</div>
+        </div>
+        <div class="stat-item">
+          <div class="stat-num"><span class="stat-highlight">83%</span></div>
+          <div class="stat-label"><strong>BIẾT</strong> phải thay đổi nhưng <strong>KHÔNG</strong> hành động</div>
+        </div>
+      </div>
+      <p class="stats-q"><em>"Bạn có đang nằm trong số đó?"</em></p>
+    </div>
+
+    <!-- Nhóm 1 -->
+    <div class="pain-group-label">VỀ THỜI GIAN & THỂ CHẤT</div>
+    <div class="pain-grid">
+      <div class="pain-card">
+        <div class="pain-icon" style="background:rgba(239,159,39,.1)"><i class="ti ti-clock-exclamation" style="color:var(--gold)"></i></div>
+        <div class="pain-text">
+          <div class="pain-title">Sáng vội, trưa delivery, tối mệt rã rời</div>
+          <div class="pain-desc">Không có thời gian để ăn đúng — hay đó chỉ là lý do?</div>
+        </div>
+      </div>
+      <div class="pain-card" style="border-left-color:var(--teal-mid)">
+        <div class="pain-icon" style="background:rgba(29,158,117,.1)"><i class="ti ti-heart-rate" style="color:var(--teal-mid)"></i></div>
+        <div class="pain-text">
+          <div class="pain-title">Cơ thể đang xuống cấp — dù chưa già</div>
+          <div class="pain-desc">Mệt mỏi, nặng nề, thiếu sinh khí — ngay cả khi vừa nghỉ ngơi.</div>
+        </div>
+      </div>
+      <div class="pain-card core" style="border-color:var(--gold)">
+        <div class="pain-icon" style="background:linear-gradient(135deg,var(--gold),var(--gold-dark))"><i class="ti ti-flame" style="color:#fff"></i></div>
+        <div class="pain-text">
+          <div class="pain-title">Ăn vội — mất kết nối với bữa ăn <span class="core-badge">★ CỐT LÕI</span></div>
+          <div class="pain-desc">Ăn để sống, không phải sống để tận hưởng. Bạn không nhớ mình đã ăn gì hôm nay.</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="divider-leaf"><i class="ti ti-leaf"></i></div>
+
+    <!-- Nhóm 2 -->
+    <div class="pain-group-label">VỀ NỘI TÂM & CHUYỂN HÓA</div>
+    <div class="pain-grid">
+      <div class="pain-card purple">
+        <div class="pain-icon" style="background:rgba(201,160,220,.15)"><i class="ti ti-flower" style="color:var(--purple-mid)"></i></div>
+        <div class="pain-text">
+          <div class="pain-title">Khao khát con đường tỉnh thức — chưa tìm thấy</div>
+          <div class="pain-desc">Biết mình cần thay đổi, nhưng không biết bắt đầu từ đâu.</div>
+        </div>
+      </div>
+      <div class="pain-card purple">
+        <div class="pain-icon" style="background:rgba(201,160,220,.15)"><i class="ti ti-plant" style="color:var(--purple-mid)"></i></div>
+        <div class="pain-text">
+          <div class="pain-title">Muốn chăm sóc từ gốc — không phải chỉ chữa ngọn</div>
+          <div class="pain-desc">Đã thử thuốc, thực phẩm chức năng... nhưng vẫn chưa thấy thay đổi thật sự.</div>
+        </div>
+      </div>
+      <div class="pain-card teal">
+        <div class="pain-icon" style="background:rgba(29,158,117,.1)"><i class="ti ti-puzzle" style="color:var(--teal-mid)"></i></div>
+        <div class="pain-text">
+          <div class="pain-title">Từng thử nhiều khóa — vẫn thấy thiếu</div>
+          <div class="pain-desc">Kiến thức có, nhưng sự chuyển hóa thật sự thì chưa đến.</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Cao trào -->
+    <div class="climax-box">
+      <div class="climax-ring">
+        <div class="climax-ring-inner">TRỞ VỀ</div>
+      </div>
+      <p class="climax-text">Bạn không cần thêm một <s>chế độ ăn</s> nữa.</p>
+      <p class="climax-main">Bạn cần một <span>CON ĐƯỜNG TRỞ VỀ</span></p>
+      <p class="climax-end">— qua từng bữa ăn đúng.</p>
+    </div>
+
+    <!-- Cầu nối -->
+    <div class="bridge-box">
+      <p class="bridge-text">Và đó là lý do khóa học <strong>"Mỗi bữa ăn đúng — Một lần trở về"</strong> được sinh ra cho người bận rộn như bạn.</p>
+      <button class="btn-gold" onclick="document.getElementById('lo-trinh').scrollIntoView({behavior:'smooth'})">
+        Xem chi tiết khóa học ⬇
+      </button>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 3 — LỘ TRÌNH HỌC
+═══════════════════════════════════════════ -->
+<section id="lo-trinh">
+  <div class="section-inner">
+    <div class="section-badge"><i class="ti ti-map-2"></i> LỘ TRÌNH HÀNH TRÌNH</div>
+    <h2 class="section-title">4 chặng — 8 buổi — 4 tuần</h2>
+    <p class="section-sub">Một hành trình trở về với chính mình qua từng bữa ăn đúng</p>
+
+    <div class="stage-grid">
+      <!-- Chặng 1 -->
+      <div class="stage-card s1">
+        <div class="stage-week">TUẦN 1</div>
+        <div class="stage-title">🌑 TỈNH</div>
+        <div class="stage-lessons">
+          <div class="stage-lesson"><strong>Buổi 1:</strong> Nhìn lại bản thân — "Tôi đang ăn gì? Tôi đang là ai khi ăn?"</div>
+          <div class="stage-lesson"><strong>Buổi 2:</strong> Thực trạng & con số — "20 triệu người Việt — tôi có đang trong số đó?"</div>
+        </div>
+      </div>
+      <!-- Chặng 2 -->
+      <div class="stage-card s2">
+        <div class="stage-week">TUẦN 2</div>
+        <div class="stage-title">🌗 HIỂU</div>
+        <div class="stage-key-badge">⭐ TRỌNG TÂM</div>
+        <div class="stage-lessons">
+          <div class="stage-lesson"><strong>Buổi 3:</strong> 4 Nhóm Dinh Dưỡng Cơ Bản</div>
+          <div class="chip-row">
+            <span class="chip">🌾 Tinh bột</span>
+            <span class="chip">🥚 Đạm</span>
+            <span class="chip">🥑 Béo</span>
+            <span class="chip">🥬 Vitamin</span>
+          </div>
+          <div class="stage-lesson" style="margin-top:8px"><strong>Buổi 4:</strong> Đa Hệ Quy Chiếu — Lăng kính 4 chiều</div>
+          <div class="chip-row">
+            <span class="chip">🩺 Tây y</span>
+            <span class="chip">🌿 Đông y</span>
+            <span class="chip">👵 Dân gian</span>
+            <span class="chip">🧘 Nội tâm</span>
+          </div>
+        </div>
+      </div>
+      <!-- Chặng 3 -->
+      <div class="stage-card s3">
+        <div class="stage-week">TUẦN 3</div>
+        <div class="stage-title">🌕 HÀNH</div>
+        <div class="stage-lessons">
+          <div class="stage-lesson"><strong>Buổi 5:</strong> Công thức 15 phút — "Bữa ăn đúng giữa lịch dày"</div>
+          <div class="stage-lesson"><strong>Buổi 6:</strong> Ăn trong tỉnh thức — "Mỗi bữa ăn là một lần trở về"</div>
+        </div>
+      </div>
+      <!-- Chặng 4 -->
+      <div class="stage-card s4">
+        <div class="stage-week">TUẦN 4</div>
+        <div class="stage-title">✨ AN</div>
+        <div class="stage-lessons">
+          <div class="stage-lesson"><strong>Buổi 7:</strong> Tâm thái lành & 7 thói quen nhỏ</div>
+          <div class="stage-lesson"><strong>Buổi 8:</strong> Lan tỏa & Tổng kết — "Đem sự tỉnh thức về cho gia đình"</div>
+        </div>
+      </div>
+    </div>
+
+    <!-- 3 cam kết -->
+    <div class="commit-grid">
+      <div class="commit-card">
+        <div class="commit-icon">📅</div>
+        <div class="commit-label">2 buổi/tuần đều đặn</div>
+        <div class="commit-sub">Lịch cố định, dễ sắp xếp</div>
+      </div>
+      <div class="commit-card">
+        <div class="commit-icon">⏰</div>
+        <div class="commit-label">60–75 phút mỗi buổi</div>
+        <div class="commit-sub">Gọn gàng, không lãng phí</div>
+      </div>
+      <div class="commit-card">
+        <div class="commit-icon">💻</div>
+        <div class="commit-label">Online Zoom linh hoạt</div>
+        <div class="commit-sub">Học mọi nơi, có recording</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 4 — GIẢNG VIÊN
+═══════════════════════════════════════════ -->
+<section id="giang-vien">
+  <div class="section-inner">
+    <div class="section-badge"><i class="ti ti-heart-handshake"></i> NGƯỜI ĐỒNG HÀNH CÙNG BẠN</div>
+    <h2 class="section-title">Gặp gỡ Mentor của bạn</h2>
+
+    <div class="mentor-card">
+      <!-- Avatar HTT -->
+      <div class="avatar-wrap">
+        <div class="avatar-circle">
+          <div class="avatar-htt">HTT</div>
+        </div>
+        <div class="avatar-lotus"><i class="ti ti-lotus"></i></div>
+      </div>
+
+      <div class="mentor-name">Hồ Thu Tuyền</div>
+      <div class="mentor-role">MENTOR DINH DƯỠNG</div>
+      <p class="mentor-tagline">"Đồng hành cùng bạn trên hành trình trở về với chính mình qua từng bữa ăn đúng"</p>
+
+      <!-- 4 tầng học vấn -->
+      <div class="edu-list">
+        <div class="edu-item">
+          <div class="edu-icon blue"><i class="ti ti-school"></i></div>
+          <div class="edu-content">
+            <div class="edu-degree">Thạc sĩ Quản trị Kinh doanh (MBA) <span class="edu-badge intl">QUỐC TẾ</span></div>
+            <div class="edu-where">Viện Công nghệ Châu Á (AIT) Thái Lan · 2010</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon purple"><i class="ti ti-lotus"></i></div>
+          <div class="edu-content">
+            <div class="edu-degree">Chuyên gia Tư vấn Huấn luyện Nội tâm</div>
+            <div class="edu-where">Mentor WIT K06 · 08/2025</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon gold"><i class="ti ti-salad"></i></div>
+          <div class="edu-content">
+            <div class="edu-degree">Mentor Dinh Dưỡng</div>
+            <div class="edu-where">Tổ chức WIT K03 · 05/2026</div>
+          </div>
+        </div>
+        <div class="edu-item">
+          <div class="edu-icon teal"><i class="ti ti-book-2"></i></div>
+          <div class="edu-content">
+            <div class="edu-degree">Cử nhân Dinh Dưỡng <span class="edu-badge studying">ĐANG HỌC</span></div>
+            <div class="edu-where">Đại học Đông Á · Khóa 2026</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Công trình nghiên cứu -->
+      <div class="research-box">
+        <div class="research-icon"><i class="ti ti-brain"></i></div>
+        <div>
+          <span class="research-badge">TÁC GIẢ NGHIÊN CỨU</span>
+          <div class="research-title">Bệnh Alzheimer & Cơ chế Bảo dưỡng Sức khỏe</div>
+          <div class="research-desc">Dưới lăng kính đa hệ quy chiếu: Tây y · Đông y · Dân gian · Dinh dưỡng · Nội tâm</div>
+        </div>
+      </div>
+
+      <!-- Cộng đồng Sắc Tuệ An -->
+      <div class="community-box">
+        <div class="community-icon"><i class="ti ti-users-group"></i></div>
+        <div style="flex:1">
+          <span class="community-badge">NGƯỜI SÁNG LẬP</span>
+          <div class="community-title">Nhóm Sắc Tuệ An</div>
+          <div class="community-slogan">"Nâng tầm nhận thức - Đời nở hoa"</div>
+          <div class="community-stats">
+            <div class="c-stat"><div class="c-stat-num">5 buổi</div><div class="c-stat-label">mỗi tuần online</div></div>
+            <div class="c-stat"><div class="c-stat-num">5+ tỉnh</div><div class="c-stat-label">thành & quốc tế</div></div>
+            <div class="c-stat"><div class="c-stat-num">3 lần</div><div class="c-stat-label">đọc "Hạnh Phúc Đủ"</div></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Hành trình 15 năm -->
+      <div class="timeline-box">
+        <span class="timeline-badge">HÀNH TRÌNH 15 NĂM</span>
+        <div class="timeline-cols">
+          <div class="t-col"><div class="t-year">2010</div><div class="t-label">Vật chất</div><div class="t-val">MBA</div></div>
+          <div class="t-col"><div class="t-year">2025</div><div class="t-label">Tinh thần</div><div class="t-val">Nội tâm</div></div>
+          <div class="t-col"><div class="t-year">2026</div><div class="t-label">Sức khỏe</div><div class="t-val">Dinh dưỡng</div></div>
+        </div>
+        <div class="timeline-quote">
+          "Từ Quản trị Kinh doanh đến Tư vấn Nội tâm rồi Dinh dưỡng Tỉnh thức —<br/>
+          một hành trình <strong>không phải đến đích, mà là trở về</strong>."
+        </div>
+      </div>
+
+      <!-- Triết lý cuối -->
+      <div style="margin-top:20px;padding:0 8px">
+        <i class="ti ti-quote" style="color:var(--gold-light);font-size:20px;display:block;margin-bottom:8px"></i>
+        <p class="mentor-philosophy">
+          "Tôi tin rằng <strong>một con người đủ đầy</strong> bắt đầu từ <strong>một bữa ăn đúng</strong>."
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 5 — SẢN PHẨM FOUNDING COHORT
+═══════════════════════════════════════════ -->
+<section id="san-pham">
+  <div class="section-inner">
+    <div class="section-badge" style="background:linear-gradient(135deg,rgba(239,159,39,.15),rgba(186,117,23,.1));border-color:rgba(239,159,39,.4)">
+      <i class="ti ti-star"></i> FOUNDING COHORT — LỨA ĐẦU TIÊN
+    </div>
+    <h2 class="section-title">Đặc quyền cho người đi đầu</h2>
+
+    <!-- Khối 1: Khóa học chính -->
+    <div class="product-card">
+      <div class="product-inner-badge">— KHÓA HỌC CHÍNH —</div>
+      <div class="product-title">Mỗi bữa ăn đúng — Một lần trở về —</div>
+      <div class="product-info-grid">
+        <div class="product-info-item"><div class="icon">📅</div><div class="val">8 buổi học</div><div class="sub">trong 4 tuần</div></div>
+        <div class="product-info-item"><div class="icon">⏰</div><div class="val">60–75 phút</div><div class="sub">mỗi buổi</div></div>
+        <div class="product-info-item"><div class="icon">💻</div><div class="val">Online Zoom</div><div class="sub">linh hoạt</div></div>
+        <div class="product-info-item"><div class="icon">👥</div><div class="val">Chỉ 10 người</div><div class="sub">đồng hành sát</div></div>
+      </div>
+      <p class="product-note">4 chặng <strong>TỈNH · HIỂU · HÀNH · AN</strong> — như đã giới thiệu trong phần Lộ Trình</p>
+    </div>
+
+    <!-- Khối 2: Bonus -->
+    <div class="product-card" style="margin-top:16px">
+      <div class="product-inner-badge">— QUÀ TẶNG ĐI KÈM —</div>
+      <div class="product-title" style="font-size:17px">Đặc quyền của Founding Cohort</div>
+      <div class="bonus-list">
+        <div class="bonus-item">
+          <div class="bonus-icon">🎙️</div>
+          <div class="bonus-content">
+            <div class="bonus-name">8 Audio Podcast tóm tắt</div>
+            <div class="bonus-desc">Nghe lại mọi lúc — phù hợp người bận rộn</div>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">📊</div>
+          <div class="bonus-content">
+            <div class="bonus-name">Slide deck 8 buổi đầy đủ</div>
+            <div class="bonus-desc">Tài liệu trực quan — dễ ôn tập</div>
+          </div>
+        </div>
+        <div class="bonus-item">
+          <div class="bonus-icon">💬</div>
+          <div class="bonus-content">
+            <div class="bonus-name">Cộng đồng Zalo riêng</div>
+            <div class="bonus-desc">Hỗ trợ — đồng hành trong suốt khóa</div>
+          </div>
+        </div>
+        <div class="bonus-item star">
+          <div class="bonus-icon">💝</div>
+          <div class="bonus-content">
+            <div class="bonus-name">Buổi 1-1 với Tuyền (20 phút) <span class="bonus-badge-star">★ ĐẶC QUYỀN</span></div>
+            <div class="bonus-desc">Riêng tư — lắng nghe câu chuyện của bạn</div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Khối 3: Học phí -->
+    <div class="price-card">
+      <span class="price-inner-badge">— ĐẦU TƯ CHO SỨC KHỎE —</span>
+      <div class="price-old">Giá niêm yết: <s>2.500.000đ</s></div>
+      <div class="price-main">1.500.000đ</div>
+      <div class="price-label">Học phí Founding Cohort</div>
+      <div class="price-save">🎁 Tiết kiệm 1.000.000đ (40%)</div>
+      <a href="#faq-cta" class="btn-register" onclick="document.getElementById('faq-cta').scrollIntoView({behavior:'smooth'});return false;">
+        ĐĂNG KÝ FOUNDING COHORT →
+      </a>
+      <div class="price-info">🌸 Khai giảng: 15/08/2026 · Liên hệ trực tiếp Tuyền sau khi đăng ký</div>
+    </div>
+
+    <!-- Khối 4: Khan hiếm -->
+    <div class="scarcity-card">
+      <div class="scarcity-icon"><i class="ti ti-flower"></i></div>
+      <div class="scarcity-title">Vì Sao Chỉ 10 Người?</div>
+      <p class="scarcity-text">
+        Tuyền chọn đồng hành sâu sát cùng <strong>10 học viên đầu tiên</strong> — vì với Tuyền, dạy không phải truyền kiến thức, mà là <strong>cùng nhau trở về</strong> qua từng bữa ăn đúng.
+      </p>
+      <p class="scarcity-note">🌸 <strong>Founding Cohort đang mở</strong> — còn nhận đến đủ 10 người. Sau khóa đầu, các điều kiện có thể thay đổi.</p>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 6 — FAQ + CTA CUỐI + FOOTER
+═══════════════════════════════════════════ -->
+<section id="faq-cta">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <div class="section-badge"><i class="ti ti-help-circle"></i> CÂU HỎI THƯỜNG GẶP</div>
+      <h2 class="section-title">Bạn đang tự hỏi...</h2>
+      <p class="section-sub">Tuyền đã nghe những câu hỏi này nhiều lần — đây là câu trả lời thật lòng</p>
+    </div>
+
+    <div class="faq-list">
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Tôi quá bận — có theo nổi 8 buổi trong 4 tuần không?</span>
+          <i class="ti ti-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Hoàn toàn được! Mỗi buổi chỉ <strong>60–75 phút</strong>, 2 lần/tuần — ít hơn một bộ phim. Ngoài ra, mỗi buổi đều có <span class="highlight">recording để xem lại</span> nếu bạn lỡ một buổi vì lịch đột xuất. Khóa học được thiết kế đặc biệt <strong>cho người bận rộn</strong> — không phải để thêm áp lực, mà để giúp bạn tìm lại nhịp sống đúng.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Tôi không có kiến thức nền về dinh dưỡng — có học được không?</span>
+          <i class="ti ti-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Đây chính là điểm mạnh của khóa này! Hành trình bắt đầu từ chặng <strong>TỈNH</strong> — nhìn lại bản thân, không cần biết gì trước. Tuyền xây dựng khóa theo nguyên tắc <span class="highlight">"từ nhận thức, không phải từ kiến thức"</span> — bạn sẽ hiểu dinh dưỡng qua chính câu chuyện và thói quen ăn uống của mình.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Tôi đã thử nhiều khóa — khóa này khác gì?</span>
+          <i class="ti ti-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Hầu hết các khóa dinh dưỡng dạy bạn <strong>phải ăn gì</strong>. Khóa này dạy bạn <strong>nhìn nhận ăn uống thế nào</strong> — qua lăng kính đa hệ quy chiếu: Tây y · Đông y · Dân gian · Nội tâm. <span class="highlight">Không có mẹo vặt, không có thực đơn cứng nhắc</span> — chỉ có sự thay đổi nhận thức bền vững. Thêm vào đó, với chỉ 10 học viên, Tuyền đồng hành sát sao với từng người.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Có hoàn tiền nếu tôi không hài lòng không?</span>
+          <i class="ti ti-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Có. Tuyền cam kết <strong>hoàn 50% học phí</strong> nếu bạn cảm thấy không phù hợp sau buổi học đầu tiên — miễn là bạn thông báo <span class="highlight">trước buổi 2</span>. Tuyền tin vào chất lượng của khóa học, và cũng muốn đảm bảo rằng đây là hành trình <strong>đúng người, đúng thời điểm</strong> với bạn.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Tôi có thể thanh toán như thế nào?</span>
+          <i class="ti ti-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Bạn thanh toán bằng <strong>chuyển khoản ngân hàng</strong> (số tài khoản sẽ được gửi sau khi đăng ký), hoặc qua <strong>Momo</strong> nếu cần. Học phí thanh toán <span class="highlight">một lần toàn bộ</span> khi đăng ký để xác nhận suất học. Sau khi nhận thanh toán, Tuyền sẽ liên lạc trực tiếp để xác nhận và gửi thông tin lịch học.</p>
+        </div>
+      </div>
+
+      <div class="faq-item">
+        <button class="faq-question" onclick="toggleFaq(this)">
+          <span>Sau khóa học, có gì hỗ trợ tôi tiếp tục không?</span>
+          <i class="ti ti-plus faq-icon"></i>
+        </button>
+        <div class="faq-answer">
+          <p>Học xong không có nghĩa là kết thúc. <strong>Group Zalo Founding Cohort</strong> được duy trì <span class="highlight">3 tháng sau khi kết thúc khóa</span> để bạn tiếp tục hỏi, chia sẻ và được hỗ trợ. Ngoài ra, sau 1 tháng tự thực hành, cả nhóm sẽ có <strong>1 buổi Zoom Reunion</strong> (30–40 phút) để cùng nhau nhìn lại hành trình — buổi này Tuyền rất trân trọng và không muốn bỏ qua.</p>
+        </div>
+      </div>
+
+    </div>
+
+    <!-- Khối Cam kết -->
+    <div class="guarantee-box">
+      <div class="guarantee-icon"><i class="ti ti-shield-check"></i></div>
+      <div>
+        <div class="guarantee-title">Cam kết của Tuyền với bạn</div>
+        <ul class="guarantee-list">
+          <li>Đồng hành sâu sát trong suốt 8 buổi — không phải dạy rồi bỏ</li>
+          <li>Hoàn 50% học phí nếu bạn cảm thấy không phù hợp sau buổi 1 (trước buổi 2)</li>
+          <li>Ghi lại toàn bộ 8 buổi để bạn xem lại bất cứ lúc nào</li>
+          <li>Hỗ trợ qua Zalo suốt khóa học và 3 tháng sau khi kết thúc</li>
+          <li>Buổi 1-1 riêng tư 20 phút để lắng nghe câu chuyện của bạn</li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- CTA cuối -->
+    <div class="final-cta">
+      <span class="final-cta-badge">✨ FOUNDING COHORT — LỨA ĐẦU TIÊN</span>
+      <h2 class="final-cta-title">Sẵn sàng trở về chưa?</h2>
+      <p class="final-cta-sub">Chỉ 10 suất · Khai giảng 15/08/2026 · Học phí 1.500.000đ</p>
+      <div class="final-cta-detail">
+        <span class="cta-chip">📅 8 buổi / 4 tuần</span>
+        <span class="cta-chip">💻 Online Zoom</span>
+        <span class="cta-chip">👥 Chỉ 10 người</span>
+        <span class="cta-chip">🎁 Bonus 1-1 với Tuyền</span>
+      </div>
+      <a href="mailto:tuyenclariant@gmail.com?subject=Đăng ký Founding Cohort — Mỗi Bữa Ăn Đúng" class="btn-register">
+        ĐĂNG KÝ NGAY →
+      </a>
+      <div class="final-cta-note">🌸 Sau khi đăng ký, Tuyền sẽ liên hệ trực tiếp để xác nhận và hướng dẫn thanh toán</div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     FOOTER
+═══════════════════════════════════════════ -->
+<footer>
+  <div class="footer-name">Hồ Thu Tuyền</div>
+  <div class="footer-role">Mentor Dinh Dưỡng · Người sáng lập Nhóm Sắc Tuệ An</div>
+  <div class="footer-contact">
+    <a href="mailto:tuyenclariant@gmail.com" class="footer-link">
+      <i class="ti ti-mail"></i> tuyenclariant@gmail.com
+    </a>
+    <span class="footer-link">
+      <i class="ti ti-calendar"></i> Khai giảng: 15/08/2026
+    </span>
+    <span class="footer-link">
+      <i class="ti ti-users"></i> Founding Cohort · 10 người
+    </span>
+  </div>
+  <div class="footer-divider">
+    <div class="footer-copy">
+      © 2026 Hồ Thu Tuyền · "Mỗi bữa ăn đúng — Một lần trở về" · Sắc Tuệ An — Nâng tầm nhận thức · Đời nở hoa
+    </div>
+  </div>
+</footer>
+
+
+<script>
+  function toggleFaq(btn) {
+    const item = btn.closest('.faq-item');
+    const isOpen = item.classList.contains('open');
+    document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
+    if (!isOpen) item.classList.add('open');
+  }
+
+  // Scroll-triggered fade-in
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.style.opacity = '1';
+        e.target.style.transform = 'translateY(0)';
+      }
+    });
+  }, { threshold: 0.12 });
+
+  document.querySelectorAll('.stage-card, .pain-card, .product-card, .price-card, .scarcity-card, .faq-item, .guarantee-box').forEach(el => {
+    el.style.opacity = '0';
+    el.style.transform = 'translateY(24px)';
+    el.style.transition = 'opacity .5s ease, transform .5s ease';
+    observer.observe(el);
+  });
+</script>
+</body>
+</html>
