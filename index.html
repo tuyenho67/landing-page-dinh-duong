@@ -9,6 +9,14 @@
   <meta property="og:description" content="Khóa học Dinh Dưỡng Tỉnh Thức với Mentor Hồ Thu Tuyền. Founding Cohort chỉ 10 người. Khai giảng 15/08/2026." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="vi_VN" />
+  <!-- Google Analytics -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-NWMD3MV1TB"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-NWMD3MV1TB');
+  </script>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
@@ -269,6 +277,10 @@
       border: 3px solid var(--gold); display: flex; align-items: center; justify-content: center;
       position: relative; overflow: hidden;
       animation: pulse-htt 2.5s ease-in-out infinite;
+    }
+    .avatar-circle img {
+      width: 100%; height: 100%; object-fit: cover; object-position: center top;
+      border-radius: 50%;
     }
     .avatar-htt {
       font-family: var(--font-serif); font-size: 38px; font-weight: 700;
@@ -818,7 +830,7 @@
       <!-- Avatar HTT -->
       <div class="avatar-wrap">
         <div class="avatar-circle">
-          <div class="avatar-htt">HTT</div>
+          <img src="tuyen.jpg" alt="Mentor Hồ Thu Tuyền" />
         </div>
         <div class="avatar-lotus"><i class="ti ti-lotus"></i></div>
       </div>
@@ -976,7 +988,7 @@
       <div class="price-main">1.500.000đ</div>
       <div class="price-label">Học phí Founding Cohort</div>
       <div class="price-save">🎁 Tiết kiệm 1.000.000đ (40%)</div>
-      <a href="#faq-cta" class="btn-register" onclick="document.getElementById('faq-cta').scrollIntoView({behavior:'smooth'});return false;">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScaxM-cY0P2xUh4BbHexlXT7UkDiPnfVZfW3sbcZNV6VWsRLw/viewform?usp=header" target="_blank" class="btn-register">
         ĐĂNG KÝ FOUNDING COHORT →
       </a>
       <div class="price-info">🌸 Khai giảng: 15/08/2026 · Liên hệ trực tiếp Tuyền sau khi đăng ký</div>
@@ -1096,7 +1108,7 @@
         <span class="cta-chip">👥 Chỉ 10 người</span>
         <span class="cta-chip">🎁 Bonus 1-1 với Tuyền</span>
       </div>
-      <a href="mailto:tuyenclariant@gmail.com?subject=Đăng ký Founding Cohort — Mỗi Bữa Ăn Đúng" class="btn-register">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScaxM-cY0P2xUh4BbHexlXT7UkDiPnfVZfW3sbcZNV6VWsRLw/viewform?usp=header" target="_blank" class="btn-register">
         ĐĂNG KÝ NGAY →
       </a>
       <div class="final-cta-note">🌸 Sau khi đăng ký, Tuyền sẽ liên hệ trực tiếp để xác nhận và hướng dẫn thanh toán</div>
@@ -1114,6 +1126,9 @@
   <div class="footer-contact">
     <a href="mailto:tuyenclariant@gmail.com" class="footer-link">
       <i class="ti ti-mail"></i> tuyenclariant@gmail.com
+    </a>
+    <a href="https://zalo.me/0903842890" target="_blank" class="footer-link">
+      <i class="ti ti-brand-hipchat"></i> Zalo: 0903 842 890
     </a>
     <span class="footer-link">
       <i class="ti ti-calendar"></i> Khai giảng: 15/08/2026
