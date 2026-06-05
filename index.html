@@ -108,7 +108,12 @@
       font-size: clamp(14px, 3vw, 18px); color: rgba(255,255,255,.75);
       margin-bottom: 28px; max-width: 480px;
     }
-    .hero-philosophy { margin-bottom: 36px; display: flex; flex-direction: column; gap: 10px; }
+    .hero-philosophy { margin-bottom: 20px; display: flex; flex-direction: column; gap: 10px; }
+    .hero-clarify {
+      font-size: clamp(13px, 2.6vw, 15px); color: rgba(255,255,255,.7);
+      max-width: 460px; margin: 0 auto 28px; line-height: 1.6;
+    }
+    .hero-clarify strong { color: var(--gold-light); }
     .hero-phil-line {
       background: rgba(255,255,255,.06); border: 1px solid rgba(239,159,39,.2);
       border-radius: var(--radius-md); padding: 10px 20px;
@@ -626,12 +631,13 @@
       <div class="hero-phil-line">Không phải kế hoạch — mà là <strong>sự trở về</strong></div>
       <div class="hero-phil-line">Cho người khỏe hơn, vui hơn, dù đời có vội</div>
     </div>
+    <p class="hero-clarify">Khóa <strong>8 buổi</strong> · Online · Cho phụ nữ bận rộn muốn ăn đúng mà không cần thực đơn cứng nhắc</p>
     <div class="hero-cta">
-      <button class="btn-gold" onclick="document.getElementById('noi-dau').scrollIntoView({behavior:'smooth'})">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLScaxM-cY0P2xUh4BbHexlXT7UkDiPnfVZfW3sbcZNV6VWsRLw/viewform?usp=header" target="_blank" class="btn-gold" style="text-decoration:none;display:inline-flex;align-items:center;justify-content:center;">
+        Giữ suất của tôi →
+      </a>
+      <button class="btn-outline" onclick="document.getElementById('noi-dau').scrollIntoView({behavior:'smooth'})">
         Tìm hiểu thêm ⬇
-      </button>
-      <button class="btn-outline" onclick="document.getElementById('giang-vien').scrollIntoView({behavior:'smooth'})">
-        Xem giảng viên
       </button>
     </div>
   </div>
@@ -781,7 +787,7 @@
         <div class="stage-week">TUẦN 3</div>
         <div class="stage-title">🌕 HÀNH</div>
         <div class="stage-lessons">
-          <div class="stage-lesson"><strong>Buổi 5:</strong> Công thức 15 phút — "Bữa ăn đúng giữa lịch dày"</div>
+          <div class="stage-lesson"><strong>Buổi 5:</strong> Bữa ăn đúng giữa lịch bận — tìm cách phù hợp với bạn</div>
           <div class="stage-lesson"><strong>Buổi 6:</strong> Ăn trong tỉnh thức — "Mỗi bữa ăn là một lần trở về"</div>
         </div>
       </div>
@@ -790,7 +796,7 @@
         <div class="stage-week">TUẦN 4</div>
         <div class="stage-title">✨ AN</div>
         <div class="stage-lessons">
-          <div class="stage-lesson"><strong>Buổi 7:</strong> Tâm thái lành & 7 thói quen nhỏ</div>
+          <div class="stage-lesson"><strong>Buổi 7:</strong> Tâm thái lành — xây lối sống bền vững của riêng bạn</div>
           <div class="stage-lesson"><strong>Buổi 8:</strong> Lan tỏa & Tổng kết — "Đem sự tỉnh thức về cho gia đình"</div>
         </div>
       </div>
