@@ -4,9 +4,9 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Mỗi Bữa Ăn Đúng — Một Lần Trở Về | Mentor Hồ Thu Tuyền</title>
-  <meta name="description" content="Khóa học Dinh Dưỡng Tỉnh Thức dành cho người bận rộn. 8 buổi · 4 tuần · Founding Cohort chỉ 10 người. Học phí 1.500.000đ. Khai giảng 15/08/2026." />
+  <meta name="description" content="Khóa học Dinh Dưỡng Tỉnh Thức dành cho người bận rộn. 8 buổi · 4 tuần · Founding Cohort chỉ 10 người. Học phí 1.500.000đ. Khai giảng 18/08/2026." />
   <meta property="og:title" content="Mỗi Bữa Ăn Đúng — Một Lần Trở Về" />
-  <meta property="og:description" content="Khóa học Dinh Dưỡng Tỉnh Thức với Mentor Hồ Thu Tuyền. Founding Cohort chỉ 10 người. Khai giảng 15/08/2026." />
+  <meta property="og:description" content="Khóa học Dinh Dưỡng Tỉnh Thức với Mentor Hồ Thu Tuyền. Founding Cohort chỉ 10 người. Khai giảng 18/08/2026." />
   <meta property="og:type" content="website" />
   <meta property="og:locale" content="vi_VN" />
   <!-- Google Analytics -->
@@ -368,6 +368,24 @@
     .timeline-quote strong { color: var(--gold-light); }
     .mentor-philosophy { font-family: var(--font-serif); font-style: italic; font-size: 16px; color: var(--blue-dark); text-align: center; padding: 0 8px; }
     .mentor-philosophy strong { color: var(--gold-dark); }
+    .letter-card {
+      background: #fff; border: 1px solid rgba(15,110,86,.18);
+      border-left: 4px solid var(--gold); border-radius: var(--radius-md);
+      padding: clamp(24px, 5vw, 44px); margin-top: 28px;
+      box-shadow: 0 10px 40px rgba(4,44,83,.07);
+    }
+    .letter-card p {
+      font-size: clamp(15px, 2.6vw, 17px); line-height: 1.85;
+      color: #2b3a4a; margin-bottom: 18px;
+    }
+    .letter-card p:last-child { margin-bottom: 0; }
+    .letter-card strong { color: var(--blue-dark); font-weight: 700; }
+    .letter-card em { color: var(--teal-dark); font-style: italic; }
+    .letter-sign {
+      font-family: var(--font-serif); font-style: italic;
+      font-size: clamp(17px, 3vw, 20px) !important; color: var(--gold-dark) !important;
+      text-align: right; margin-top: 28px !important;
+    }
 
     /* ── SECTION 5: SẢN PHẨM ── */
     #san-pham {
@@ -439,6 +457,12 @@
     }
     .btn-register:hover { transform: translateY(-2px); }
     .price-info { color: rgba(255,255,255,.6); font-size: 13px; margin-top: 16px; }
+    .price-deadline {
+      margin-top: 12px; padding: 10px 16px; font-size: 13px; line-height: 1.5;
+      color: #fff; background: rgba(239,159,39,.18);
+      border: 1px solid rgba(239,159,39,.45); border-radius: var(--radius-md);
+    }
+    .price-deadline strong { color: var(--gold-light); }
     .scarcity-card {
       background: linear-gradient(135deg, #F2E8F8 0%, #fff 100%);
       border: 1px solid var(--purple-light); border-radius: var(--radius-lg);
@@ -454,6 +478,17 @@
     .scarcity-text strong { color: var(--purple-dark); }
     .scarcity-note { font-style: italic; font-size: 13px; color: var(--purple-mid); border-top: 1px dashed rgba(107,63,140,.3); padding-top: 14px; }
     .scarcity-note strong { color: var(--purple-dark); }
+    .seat-counter {
+      background: linear-gradient(135deg, rgba(239,159,39,.1), rgba(186,117,23,.06));
+      border: 1.5px solid rgba(239,159,39,.4); border-radius: var(--radius-md);
+      padding: 18px 20px; margin: 18px 0;
+    }
+    .seat-counter-label { font-size: 12px; letter-spacing: 1px; color: var(--gold-dark); font-weight: 700; margin-bottom: 6px; }
+    .seat-counter-num { font-family: var(--font-serif); font-size: 34px; color: var(--blue-dark); line-height: 1; }
+    .seat-counter-num .seat-left { color: var(--gold-dark); font-weight: 700; }
+    .seat-counter-num .seat-total { font-size: 22px; color: rgba(4,44,83,.5); }
+    .seat-bar { height: 8px; background: rgba(4,44,83,.1); border-radius: 99px; margin-top: 12px; overflow: hidden; }
+    .seat-bar-fill { height: 100%; background: linear-gradient(90deg, var(--gold), var(--gold-dark)); border-radius: 99px; transition: width .4s; }
 
     /* ── SECTION 6: FAQ + CTA + FOOTER ── */
     #faq-cta {
@@ -902,20 +937,6 @@
         </div>
       </div>
 
-      <!-- Hành trình 15 năm -->
-      <div class="timeline-box">
-        <span class="timeline-badge">HÀNH TRÌNH 15 NĂM</span>
-        <div class="timeline-cols">
-          <div class="t-col"><div class="t-year">2010</div><div class="t-label">Vật chất</div><div class="t-val">MBA</div></div>
-          <div class="t-col"><div class="t-year">2025</div><div class="t-label">Tinh thần</div><div class="t-val">Nội tâm</div></div>
-          <div class="t-col"><div class="t-year">2026</div><div class="t-label">Sức khỏe</div><div class="t-val">Dinh dưỡng</div></div>
-        </div>
-        <div class="timeline-quote">
-          "Từ Quản trị Kinh doanh đến Tư vấn Nội tâm rồi Dinh dưỡng Tỉnh thức —<br/>
-          một hành trình <strong>không phải đến đích, mà là trở về</strong>."
-        </div>
-      </div>
-
       <!-- Triết lý cuối -->
       <div style="margin-top:20px;padding:0 8px">
         <i class="ti ti-quote" style="color:var(--gold-light);font-size:20px;display:block;margin-bottom:8px"></i>
@@ -923,6 +944,37 @@
           "Tôi tin rằng <strong>một con người đủ đầy</strong> bắt đầu từ <strong>một bữa ăn đúng</strong>."
         </p>
       </div>
+    </div>
+  </div>
+</section>
+
+
+<!-- ══════════════════════════════════════════
+     SECTION 4.5 — THƯ NGỎ / VÌ SAO TÔI MỞ KHÓA HỌC
+═══════════════════════════════════════════ -->
+<section id="thu-ngo" style="background:linear-gradient(180deg,rgba(15,110,86,.06),rgba(4,44,83,.04));">
+  <div class="section-inner" style="max-width:760px;">
+    <div class="section-badge" style="background:linear-gradient(135deg,rgba(15,110,86,.15),rgba(4,44,83,.1));border-color:rgba(15,110,86,.4)">
+      <i class="ti ti-mail-heart"></i> THƯ NGỎ TỪ NGƯỜI SÁNG LẬP
+    </div>
+    <h2 class="section-title" style="text-align:center;">Vì sao tôi mở khóa học này</h2>
+
+    <div class="letter-card">
+      <p>Suốt nhiều năm làm <strong>quản lý cấp cao cho một công ty nước ngoài</strong>, tôi dồn hết tâm sức cho công việc — và gần như quên mất việc ăn uống của chính mình. Tôi ăn theo ý thích, không thật sự hiểu hậu quả sau mỗi bữa ăn. Tôi không biết phơi nắng thế nào cho đúng, cũng không biết cần bổ sung gì để cơ thể hấp thụ canxi.</p>
+
+      <p>Rồi tôi bị <strong>loãng xương — dù vẫn ăn rất nhiều hải sản.</strong> Lúc đó tôi mới hiểu: <strong>ăn nhiều không có nghĩa là ăn đúng.</strong> Có lẽ bạn cũng từng như tôi — bận rộn, biết mình nên ăn lành mạnh hơn, nhưng cứ loay hoay mãi không thành.</p>
+
+      <p>Cho đến khi tôi học dinh dưỡng một cách tử tế, mọi thứ bỗng trở nên <strong>đơn giản.</strong> Và tôi tự hỏi: vì sao điều giản dị này lại ít người được học?</p>
+
+      <p>Tôi không đến với dinh dưỡng từ con số không. Tôi bắt đầu từ <strong>Cử nhân Hóa học</strong> — nơi tôi học cách nhìn thức ăn từ gốc phân tử. Rồi <strong>Tài chính – Kế toán</strong> và <strong>Thạc sĩ MBA</strong> dạy tôi tư duy hệ thống. Hành trình <strong>Mentor Nội tâm (WIT K06)</strong> dạy tôi điều hay nhất: vì sao con người biết mà không làm được. Sau đó là <strong>hơn 100 ngày học Mentor Dinh Dưỡng</strong>, và giờ tôi đang học bài bản <strong>Cử nhân Dinh Dưỡng</strong> để thấu suốt hơn nữa. Mỗi sáng từ <strong>6h đến hơn 7h, thứ Hai đến thứ Sáu</strong>, tôi vẫn đọc sách dinh dưỡng và chia sẻ những bài học tâm đắc cùng cộng đồng <em>"Yêu đọc sách – Nghiện sức khỏe"</em>.</p>
+
+      <p>Và tôi tin rằng kiến thức chỉ thật khi được sống. Tôi đã <strong>hoàn thành 21km chạy bộ và 2km bơi</strong> — và đến hôm nay, ở tuổi 59, tôi vẫn <strong>chạy cách ngày 2–5km và bơi đều đặn.</strong> Vận động đã là lối sống hằng ngày của tôi.</p>
+
+      <p>Tôi <strong>thiết kế khóa học này cho những người bận rộn như tôi ngày xưa</strong> — không cần nhiều thời gian, không thực đơn cầu kỳ. Chỉ để cùng bạn <strong>trở về với cách ăn đúng, đủ</strong> — cho chính bạn, cho gia đình bạn, và cho một nước Việt khỏe mạnh hơn.</p>
+
+      <p>Đây là <strong>khóa đầu tiên</strong>. Tôi mong có bạn trong <strong>10 người đầu tiên</strong> ấy.</p>
+
+      <p class="letter-sign">— Hồ Thu Tuyền</p>
     </div>
   </div>
 </section>
@@ -1027,7 +1079,8 @@
       <a href="https://docs.google.com/forms/d/e/1FAIpQLScaxM-cY0P2xUh4BbHexlXT7UkDiPnfVZfW3sbcZNV6VWsRLw/viewform?usp=header" target="_blank" class="btn-register">
         ĐĂNG KÝ FOUNDING COHORT →
       </a>
-      <div class="price-info">🌸 Khai giảng: 15/08/2026 · Liên hệ trực tiếp Tuyền sau khi đăng ký</div>
+      <div class="price-info">🌸 Khai giảng: 18/08/2026 · Liên hệ trực tiếp Tuyền sau khi đăng ký</div>
+      <div class="price-deadline">⏳ Ưu đãi Founding áp dụng đến <strong>18/07/2026</strong> — hoặc đến khi đủ <strong>10 suất</strong>, tùy điều nào đến trước</div>
     </div>
 
     <!-- Khối 4: Khan hiếm -->
@@ -1037,6 +1090,20 @@
       <p class="scarcity-text">
         Tuyền chọn đồng hành sâu sát cùng <strong>10 học viên đầu tiên</strong> — vì với Tuyền, dạy không phải truyền kiến thức, mà là <strong>cùng nhau trở về</strong> qua từng bữa ăn đúng.
       </p>
+      <!-- Bộ đếm suất — Tuyền chỉnh số "còn lại" mỗi khi có người đăng ký -->
+      <div class="seat-counter">
+        <div class="seat-counter-label">SUẤT FOUNDING CÒN LẠI</div>
+        <div class="seat-counter-num"><span class="seat-left">7</span><span class="seat-total">/10</span></div>
+        <div class="seat-bar"><div class="seat-bar-fill"></div></div>
+      </div>
+      <script>
+        // Tự động vẽ thanh tiến trình dựa trên số suất còn lại — Tuyền chỉ cần sửa số trong <span class="seat-left">
+        (function(){
+          var left = parseInt(document.querySelector('.seat-left').textContent, 10) || 0;
+          var filled = Math.max(0, Math.min(10, 10 - left));
+          document.querySelector('.seat-bar-fill').style.width = (filled * 10) + '%';
+        })();
+      </script>
       <p class="scarcity-note">🌸 <strong>Founding Cohort đang mở</strong> — còn nhận đến đủ 10 người. Sau khóa đầu, các điều kiện có thể thay đổi.</p>
     </div>
   </div>
@@ -1137,7 +1204,7 @@
     <div class="final-cta">
       <span class="final-cta-badge">✨ FOUNDING COHORT — LỨA ĐẦU TIÊN</span>
       <h2 class="final-cta-title">Sẵn sàng trở về chưa?</h2>
-      <p class="final-cta-sub">Chỉ 10 suất · Khai giảng 15/08/2026 · Học phí 1.500.000đ</p>
+      <p class="final-cta-sub">Chỉ 10 suất · Khai giảng 18/08/2026 · Học phí 1.500.000đ</p>
       <div class="final-cta-detail">
         <span class="cta-chip">📅 8 buổi / 4 tuần</span>
         <span class="cta-chip">💻 Online Zoom</span>
@@ -1167,7 +1234,7 @@
       <i class="ti ti-brand-hipchat"></i> Zalo: 0903 842 890
     </a>
     <span class="footer-link">
-      <i class="ti ti-calendar"></i> Khai giảng: 15/08/2026
+      <i class="ti ti-calendar"></i> Khai giảng: 18/08/2026
     </span>
     <span class="footer-link">
       <i class="ti ti-users"></i> Founding Cohort · 10 người
