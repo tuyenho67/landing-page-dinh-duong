@@ -210,6 +210,11 @@
     .bridge-text { color: #4B5563; font-size: 15px; margin-bottom: 20px; max-width: 560px; margin-left: auto; margin-right: auto; }
     .bridge-text strong { color: var(--blue-dark); }
 
+    /* ── Hiệu ứng HIỆN DẦN khi cuộn (dùng chung cả trang) ── */
+    .reveal-ready .reveal { opacity: 0; transform: translateY(26px); transition: opacity .7s ease, transform .7s cubic-bezier(.22,1,.36,1); }
+    .reveal-ready .reveal.visible { opacity: 1; transform: none; }
+    @media (prefers-reduced-motion: reduce) { .reveal-ready .reveal { opacity: 1 !important; transform: none !important; } }
+
     /* ── SECTION 3: LỘ TRÌNH ── */
     #lo-trinh {
       background: linear-gradient(160deg, var(--be-warm) 0%, var(--be-light) 50%, var(--be-mid) 100%);
@@ -231,6 +236,15 @@
     .stage-card.s2::after { background: var(--gold); }
     .stage-card.s3::after { background: var(--orange); }
     .stage-card.s4::after { background: var(--teal-dark); }
+    /* Dải màu rạng rỡ trên đầu mỗi chặng + nảy nhẹ khi rê chuột */
+    .stage-card { border-top: 3px solid transparent; transition: transform .28s ease, box-shadow .28s ease; }
+    .stage-card.s1 { border-top-color: var(--purple-dark); }
+    .stage-card.s2 { border-top-color: var(--gold); }
+    .stage-card.s3 { border-top-color: var(--orange); }
+    .stage-card.s4 { border-top-color: var(--teal-dark); }
+    #lo-trinh .stage-card:hover { transform: translateY(-5px); box-shadow: 0 14px 32px rgba(4,44,83,.13); }
+    #lo-trinh .commit-card { transition: transform .28s ease, box-shadow .28s ease; }
+    #lo-trinh .commit-card:hover { transform: translateY(-4px); box-shadow: 0 12px 26px rgba(4,44,83,.11); }
     .stage-week { font-size: 11px; font-weight: 700; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 6px; }
     .stage-card.s1 .stage-week { color: var(--purple-dark); }
     .stage-card.s2 .stage-week { color: var(--gold-dark); }
@@ -381,6 +395,15 @@
     .letter-card p:last-child { margin-bottom: 0; }
     .letter-card strong { color: var(--blue-dark); font-weight: 700; }
     .letter-card em { color: var(--teal-dark); font-style: italic; }
+    /* Câu trích nổi giữa thư — điểm dừng cho mắt */
+    .letter-quote {
+      font-family: var(--font-serif); font-style: italic; font-weight: 700;
+      font-size: clamp(20px, 4.2vw, 28px); line-height: 1.4;
+      color: var(--gold-dark); text-align: center;
+      margin: 28px auto !important; max-width: 520px;
+      padding: 18px 8px; position: relative;
+      border-top: 1px solid rgba(239,159,39,.3); border-bottom: 1px solid rgba(239,159,39,.3);
+    }
     .letter-sign {
       font-family: var(--font-serif); font-style: italic;
       font-size: clamp(17px, 3vw, 20px) !important; color: var(--gold-dark) !important;
@@ -514,7 +537,7 @@
       max-height: 0; overflow: hidden; transition: max-height .35s ease, padding .3s ease;
       padding: 0 20px;
     }
-    .faq-item.open .faq-answer { max-height: 300px; padding: 0 20px 18px; }
+    .faq-item.open .faq-answer { max-height: 420px; padding: 0 20px 18px; }
     .faq-answer p { font-size: 14px; color: #4B5563; line-height: 1.7; }
     .faq-answer strong { color: var(--blue-dark); }
     .faq-answer .highlight { color: var(--teal-dark); font-weight: 600; }
@@ -686,7 +709,7 @@
 <section id="noi-dau">
   <div class="section-inner" style="text-align:center">
     <!-- Cú đánh thức -->
-    <div class="stats-box">
+    <div class="stats-box reveal">
       <span class="badge">THỰC TRẠNG ĐÁNG SUY NGẪM</span>
       <div class="stats-grid">
         <div class="stat-item">
@@ -704,21 +727,21 @@
     <!-- Nhóm 1 -->
     <div class="pain-group-label">VỀ THỜI GIAN & THỂ CHẤT</div>
     <div class="pain-grid">
-      <div class="pain-card">
+      <div class="pain-card reveal">
         <div class="pain-icon" style="background:rgba(239,159,39,.1)"><i class="ti ti-clock-exclamation" style="color:var(--gold)"></i></div>
         <div class="pain-text">
           <div class="pain-title">Sáng vội, trưa delivery, tối mệt rã rời</div>
           <div class="pain-desc">Không có thời gian để ăn đúng — hay đó chỉ là lý do?</div>
         </div>
       </div>
-      <div class="pain-card" style="border-left-color:var(--teal-mid)">
+      <div class="pain-card reveal" style="border-left-color:var(--teal-mid);transition-delay:.1s">
         <div class="pain-icon" style="background:rgba(29,158,117,.1)"><i class="ti ti-heart-rate" style="color:var(--teal-mid)"></i></div>
         <div class="pain-text">
           <div class="pain-title">Cơ thể đang xuống cấp — dù chưa già</div>
           <div class="pain-desc">Mệt mỏi, nặng nề, thiếu sinh khí — ngay cả khi vừa nghỉ ngơi.</div>
         </div>
       </div>
-      <div class="pain-card core" style="border-color:var(--gold)">
+      <div class="pain-card core reveal" style="border-color:var(--gold);transition-delay:.2s">
         <div class="pain-icon" style="background:linear-gradient(135deg,var(--gold),var(--gold-dark))"><i class="ti ti-flame" style="color:#fff"></i></div>
         <div class="pain-text">
           <div class="pain-title">Ăn vội — mất kết nối với bữa ăn <span class="core-badge">★ CỐT LÕI</span></div>
@@ -732,21 +755,21 @@
     <!-- Nhóm 2 -->
     <div class="pain-group-label">VỀ NỘI TÂM & CHUYỂN HÓA</div>
     <div class="pain-grid">
-      <div class="pain-card purple">
+      <div class="pain-card purple reveal">
         <div class="pain-icon" style="background:rgba(201,160,220,.15)"><i class="ti ti-flower" style="color:var(--purple-mid)"></i></div>
         <div class="pain-text">
           <div class="pain-title">Khao khát con đường tỉnh thức — chưa tìm thấy</div>
           <div class="pain-desc">Biết mình cần thay đổi, nhưng không biết bắt đầu từ đâu.</div>
         </div>
       </div>
-      <div class="pain-card purple">
+      <div class="pain-card purple reveal" style="transition-delay:.1s">
         <div class="pain-icon" style="background:rgba(201,160,220,.15)"><i class="ti ti-plant" style="color:var(--purple-mid)"></i></div>
         <div class="pain-text">
           <div class="pain-title">Muốn chăm sóc từ gốc — không phải chỉ chữa ngọn</div>
           <div class="pain-desc">Đã thử thuốc, thực phẩm chức năng... nhưng vẫn chưa thấy thay đổi thật sự.</div>
         </div>
       </div>
-      <div class="pain-card teal">
+      <div class="pain-card teal reveal" style="transition-delay:.2s">
         <div class="pain-icon" style="background:rgba(29,158,117,.1)"><i class="ti ti-puzzle" style="color:var(--teal-mid)"></i></div>
         <div class="pain-text">
           <div class="pain-title">Từng thử nhiều khóa — vẫn thấy thiếu</div>
@@ -756,7 +779,7 @@
     </div>
 
     <!-- Cao trào -->
-    <div class="climax-box">
+    <div class="climax-box reveal">
       <div class="climax-ring">
         <div class="climax-ring-inner">TRỞ VỀ</div>
       </div>
@@ -766,7 +789,7 @@
     </div>
 
     <!-- Cầu nối -->
-    <div class="bridge-box">
+    <div class="bridge-box reveal">
       <p class="bridge-text">Và đó là lý do khóa học <strong>"Mỗi bữa ăn đúng — Một lần trở về"</strong> được sinh ra cho người bận rộn như bạn.</p>
       <button class="btn-gold" onclick="document.getElementById('lo-trinh').scrollIntoView({behavior:'smooth'})">
         Xem chi tiết khóa học ⬇
@@ -962,11 +985,17 @@
     <div class="letter-card">
       <p>Suốt nhiều năm làm <strong>quản lý cấp cao cho một công ty nước ngoài</strong>, tôi dồn hết tâm sức cho công việc — và gần như quên mất việc ăn uống của chính mình. Tôi ăn theo ý thích, không thật sự hiểu hậu quả sau mỗi bữa ăn. Tôi không biết phơi nắng thế nào cho đúng, cũng không biết cần bổ sung gì để cơ thể hấp thụ canxi.</p>
 
-      <p>Rồi tôi bị <strong>loãng xương — dù vẫn ăn rất nhiều hải sản.</strong> Lúc đó tôi mới hiểu: <strong>ăn nhiều không có nghĩa là ăn đúng.</strong> Có lẽ bạn cũng từng như tôi — bận rộn, biết mình nên ăn lành mạnh hơn, nhưng cứ loay hoay mãi không thành.</p>
+      <p>Rồi tôi bị <strong>loãng xương — dù vẫn ăn rất nhiều hải sản.</strong></p>
+
+      <p class="letter-quote">“Ăn nhiều không có nghĩa là ăn đúng.”</p>
+
+      <p>Có lẽ bạn cũng từng như tôi — bận rộn, biết mình nên ăn lành mạnh hơn, nhưng cứ loay hoay mãi không thành.</p>
 
       <p>Cho đến khi tôi học dinh dưỡng một cách tử tế, mọi thứ bỗng trở nên <strong>đơn giản.</strong> Và tôi tự hỏi: vì sao điều giản dị này lại ít người được học?</p>
 
-      <p>Tôi không đến với dinh dưỡng từ con số không. Tôi bắt đầu từ <strong>Cử nhân Hóa học</strong> — nơi tôi học cách nhìn thức ăn từ gốc phân tử. Rồi <strong>Tài chính – Kế toán</strong> và <strong>Thạc sĩ MBA</strong> dạy tôi tư duy hệ thống. Hành trình <strong>Mentor Nội tâm (WIT K06)</strong> dạy tôi điều hay nhất: vì sao con người biết mà không làm được. Sau đó là <strong>hơn 100 ngày học Mentor Dinh Dưỡng</strong>, và giờ tôi đang học bài bản <strong>Cử nhân Dinh Dưỡng</strong> để thấu suốt hơn nữa. Mỗi sáng từ <strong>6h đến hơn 7h, thứ Hai đến thứ Sáu</strong>, tôi vẫn đọc sách dinh dưỡng và chia sẻ những bài học tâm đắc cùng cộng đồng <em>"Yêu đọc sách – Nghiện sức khỏe"</em>.</p>
+      <p>Tôi không đến với dinh dưỡng từ con số không. Tôi bắt đầu từ <strong>Cử nhân Hóa học</strong> — nơi tôi học cách nhìn thức ăn từ gốc phân tử. Rồi <strong>Tài chính – Kế toán</strong> và <strong>Thạc sĩ MBA</strong> dạy tôi tư duy hệ thống. Hành trình <strong>Mentor Nội tâm (WIT K06)</strong> dạy tôi điều hay nhất: vì sao con người biết mà không làm được.</p>
+
+      <p>Sau đó là <strong>hơn 100 ngày học Mentor Dinh Dưỡng</strong>, và giờ tôi đang học bài bản <strong>Cử nhân Dinh Dưỡng</strong> để thấu suốt hơn nữa. Mỗi sáng từ <strong>6h đến hơn 7h, thứ Hai đến thứ Sáu</strong>, tôi vẫn đọc sách dinh dưỡng và chia sẻ những bài học tâm đắc cùng cộng đồng <em>"Yêu đọc sách – Nghiện sức khỏe"</em>.</p>
 
       <p>Và tôi tin rằng kiến thức chỉ thật khi được sống. Tôi đã <strong>hoàn thành 21km chạy bộ và 2km bơi</strong> — và đến hôm nay tôi vẫn <strong>chạy cách ngày 2–5km và bơi đều đặn.</strong> Vận động đã là lối sống hằng ngày của tôi.</p>
 
@@ -1030,8 +1059,7 @@
 
       <!-- Chân lời chứng -->
       <div style="display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(4,44,83,.08);">
-        <!-- THAY avatar: đổi nền này bằng <img src="anh-hieu.jpg" ...> khi có ảnh Hiếu -->
-        <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--teal-mid),var(--teal-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-serif);font-size:22px;font-weight:700;">H</div>
+        <img src="anh-hieu.jpg" alt="Hiếu Nguyễn" style="width:56px;height:56px;border-radius:50%;flex-shrink:0;object-fit:cover;object-position:50% 28%;border:2px solid var(--teal-light);">
         <div>
           <div style="font-weight:700;color:var(--blue-dark);font-size:15px;">Hiếu Nguyễn</div>
           <div style="color:#6b7280;font-size:13px;">Nhân viên văn phòng · Bình Dương</div>
@@ -1053,8 +1081,7 @@
 
       <!-- Chân lời chứng -->
       <div style="display:flex;align-items:center;gap:14px;margin-top:24px;padding-top:20px;border-top:1px solid rgba(4,44,83,.08);">
-        <!-- THAY avatar: đổi nền này bằng <img src="anh-loan.jpg" ...> khi có ảnh chị Loan -->
-        <div style="width:56px;height:56px;border-radius:50%;flex-shrink:0;background:linear-gradient(135deg,var(--blue-light),var(--blue-dark));display:flex;align-items:center;justify-content:center;color:#fff;font-family:var(--font-serif);font-size:22px;font-weight:700;">L</div>
+        <img src="anh-loan.jpg" alt="Lưu Loan" style="width:56px;height:56px;border-radius:50%;flex-shrink:0;object-fit:cover;object-position:52% 26%;border:2px solid var(--blue-light);">
         <div>
           <div style="font-weight:700;color:var(--blue-dark);font-size:15px;">Lưu Loan</div>
           <div style="color:#6b7280;font-size:13px;">Chăm sóc gia đình · Hoa Kỳ</div>
@@ -1217,7 +1244,7 @@
           <i class="ti ti-plus faq-icon"></i>
         </button>
         <div class="faq-answer">
-          <p>Hoàn toàn được! Mỗi buổi chỉ <strong>60–75 phút</strong>, 2 lần/tuần — ít hơn một bộ phim. Ngoài ra, mỗi buổi đều có <span class="highlight">recording để xem lại</span> nếu bạn lỡ một buổi vì lịch đột xuất. Khóa học được thiết kế đặc biệt <strong>cho người bận rộn</strong> — không phải để thêm áp lực, mà để giúp bạn tìm lại nhịp sống đúng.</p>
+          <p>Hoàn toàn được! Mỗi buổi chỉ <strong>60–75 phút</strong>, 2 lần/tuần — ít hơn một bộ phim. Lỡ buổi nào đã có <span class="highlight">recording xem lại</span>. Khóa thiết kế riêng <strong>cho người bận rộn</strong> — không thêm áp lực, mà giúp bạn tìm lại nhịp sống đúng.</p>
         </div>
       </div>
 
@@ -1227,7 +1254,7 @@
           <i class="ti ti-plus faq-icon"></i>
         </button>
         <div class="faq-answer">
-          <p>Đây chính là điểm mạnh của khóa này! Hành trình bắt đầu từ chặng <strong>TỈNH</strong> — nhìn lại bản thân, không cần biết gì trước. Tuyền xây dựng khóa theo nguyên tắc <span class="highlight">"từ nhận thức, không phải từ kiến thức"</span> — bạn sẽ hiểu dinh dưỡng qua chính câu chuyện và thói quen ăn uống của mình.</p>
+          <p>Đây chính là điểm mạnh của khóa! Hành trình bắt đầu từ chặng <strong>TỈNH</strong> — nhìn lại bản thân, không cần biết gì trước. Theo nguyên tắc <span class="highlight">"từ nhận thức, không phải từ kiến thức"</span>, bạn hiểu dinh dưỡng qua chính câu chuyện ăn uống của mình.</p>
         </div>
       </div>
 
@@ -1237,7 +1264,7 @@
           <i class="ti ti-plus faq-icon"></i>
         </button>
         <div class="faq-answer">
-          <p>Hầu hết các khóa dinh dưỡng dạy bạn <strong>phải ăn gì</strong>. Khóa này dạy bạn <strong>nhìn nhận ăn uống thế nào</strong> — qua lăng kính đa hệ quy chiếu: Tây y · Đông y · Dân gian · Nội tâm. <span class="highlight">Không có mẹo vặt, không có thực đơn cứng nhắc</span> — chỉ có sự thay đổi nhận thức bền vững. Thêm vào đó, với chỉ 10 học viên, Tuyền đồng hành sát sao với từng người.</p>
+          <p>Hầu hết khóa dinh dưỡng dạy bạn <strong>phải ăn gì</strong>. Khóa này dạy bạn <strong>nhìn nhận ăn uống thế nào</strong> — qua 4 lăng kính: Tây y · Đông y · Dân gian · Nội tâm. <span class="highlight">Không mẹo vặt, không thực đơn cứng nhắc</span> — chỉ có thay đổi nhận thức bền vững. Và với chỉ 10 học viên, Tuyền đồng hành sát sao từng người.</p>
         </div>
       </div>
 
@@ -1247,7 +1274,7 @@
           <i class="ti ti-plus faq-icon"></i>
         </button>
         <div class="faq-answer">
-          <p>Có. Tuyền cam kết <strong>hoàn 50% học phí</strong> nếu bạn cảm thấy không phù hợp sau buổi học đầu tiên — miễn là bạn thông báo <span class="highlight">trước buổi 2</span>. Tuyền tin vào chất lượng của khóa học, và cũng muốn đảm bảo rằng đây là hành trình <strong>đúng người, đúng thời điểm</strong> với bạn.</p>
+          <p>Có. Tuyền cam kết <strong>hoàn 50% học phí</strong> nếu bạn thấy không phù hợp sau buổi đầu — miễn báo <span class="highlight">trước buổi 2</span>. Tuyền tin vào chất lượng khóa, và muốn đây là hành trình <strong>đúng người, đúng thời điểm</strong> với bạn.</p>
         </div>
       </div>
 
@@ -1257,7 +1284,7 @@
           <i class="ti ti-plus faq-icon"></i>
         </button>
         <div class="faq-answer">
-          <p>Bạn thanh toán bằng <strong>chuyển khoản ngân hàng</strong> (số tài khoản sẽ được gửi sau khi đăng ký), hoặc qua <strong>Momo</strong> nếu cần. Học phí thanh toán <span class="highlight">một lần toàn bộ</span> khi đăng ký để xác nhận suất học. Sau khi nhận thanh toán, Tuyền sẽ liên lạc trực tiếp để xác nhận và gửi thông tin lịch học.</p>
+          <p>Bằng <strong>chuyển khoản ngân hàng</strong> (số tài khoản gửi sau khi đăng ký) hoặc <strong>Momo</strong>. Học phí đóng <span class="highlight">một lần</span> khi đăng ký để giữ suất. Nhận thanh toán xong, Tuyền liên lạc xác nhận và gửi lịch học.</p>
         </div>
       </div>
 
@@ -1267,7 +1294,7 @@
           <i class="ti ti-plus faq-icon"></i>
         </button>
         <div class="faq-answer">
-          <p>Học xong không có nghĩa là kết thúc. <strong>Group Zalo Founding Cohort</strong> được duy trì <span class="highlight">3 tháng sau khi kết thúc khóa</span> để bạn tiếp tục hỏi, chia sẻ và được hỗ trợ. Để việc đồng hành bền và đều, Tuyền giải đáp trong nhóm vào khung <strong>20h–21h các tối thứ Hai–thứ Sáu</strong> — mỗi câu hỏi của một người trở thành bài học chung cho cả nhà. Ngoài ra, sau 1 tháng tự thực hành, cả nhóm sẽ có <strong>1 buổi Zoom Reunion</strong> (30–40 phút) để cùng nhau nhìn lại hành trình — buổi này Tuyền rất trân trọng và không muốn bỏ qua.</p>
+          <p>Học xong chưa phải là kết thúc. <strong>Group Zalo Founding Cohort</strong> duy trì <span class="highlight">3 tháng sau khóa</span> để bạn tiếp tục hỏi và được hỗ trợ — Tuyền giải đáp khung <strong>20h–21h tối thứ Hai–thứ Sáu</strong>, mỗi câu hỏi của một người thành bài học chung. Sau 1 tháng tự thực hành, cả nhóm có <strong>1 buổi Zoom Reunion</strong> (30–40 phút) để cùng nhìn lại hành trình.</p>
         </div>
       </div>
 
@@ -1344,22 +1371,19 @@
     if (!isOpen) item.classList.add('open');
   }
 
-  // Scroll-triggered fade-in
-  const observer = new IntersectionObserver((entries) => {
+  // Hiệu ứng HIỆN DẦN khi cuộn — mượt mà, đồng bộ cả trang
+  document.documentElement.classList.add('reveal-ready');
+  const revealObserver = new IntersectionObserver((entries) => {
     entries.forEach(e => {
       if (e.isIntersecting) {
-        e.target.style.opacity = '1';
-        e.target.style.transform = 'translateY(0)';
+        e.target.classList.add('visible');
+        revealObserver.unobserve(e.target);
       }
     });
-  }, { threshold: 0.12 });
+  }, { threshold: 0.12, rootMargin: '0px 0px -8% 0px' });
 
-  document.querySelectorAll('.stage-card, .pain-card, .product-card, .price-card, .scarcity-card, .faq-item, .guarantee-box').forEach(el => {
-    el.style.opacity = '0';
-    el.style.transform = 'translateY(24px)';
-    el.style.transition = 'opacity .5s ease, transform .5s ease';
-    observer.observe(el);
-  });
+  document.querySelectorAll('.stage-card, .product-card, .price-card, .scarcity-card, .faq-item, .guarantee-box, .section-badge, .section-title').forEach(el => el.classList.add('reveal'));
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
 </script>
 </body>
 </html>
